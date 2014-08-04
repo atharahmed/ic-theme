@@ -1,0 +1,176 @@
+@import "partials/base";
+@import "partials/core";
+@import "partials/social-share";
+@import "partials/bxslider-slideshow";
+
+img {
+	width: 100%;
+}
+
+#section-header {
+	text-align: center;
+}
+
+#section-next,
+#section-synopsis {
+	.timer {
+		@include Futura-Medium;
+		font-size: 14px;
+		margin-top: 4px;
+		text-transform: uppercase;
+
+		.clock-icon {
+			@include inline-block;
+			margin-right: 10px;
+			vertical-align: -15%;
+
+			&:before {
+				@include IC-Icons;
+				font-size: 20px;
+				position: relative;
+				content: "\e611";
+			}
+		}
+	}
+}
+
+#section-synopsis {
+	text-align: center;
+	padding: 115px 0 20px;
+	background: $white;
+
+	.header {
+		margin-bottom: 50px;
+		color: $default-text-color;
+
+		.intro {
+			color: $red;
+		}
+
+		.timer {
+			display: block;
+			position: relative;
+			left: -8px;
+			color: $default-text-color;
+		}
+
+		&.separator .subheader:before {
+			border-bottom: 1px solid $grey;
+		}
+	}
+}
+
+#section-slideshow {
+	background-color: $white;
+	
+	.slider {
+		margin: 0;
+	}
+}
+
+#section-da-beef {
+	background: $white;
+	padding: 80px 0 100px 0;
+	color: $default-text-color;
+
+	.header {
+		color: $default-text-color;
+		text-align: center;
+
+		&.separator .subheader:before {
+			border-bottom: 1px solid $grey;
+		}
+	}
+
+	.text-section {
+		padding-bottom: 60px;
+
+		p {
+			font-size: 20px;
+
+			&:first-child {
+				@include Futura-Light;
+				font-size: 28px;
+			}
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			@include Futura-Medium;
+			font-size: 28px;
+		}
+
+		strong {
+			font-weight: 600;
+		}
+
+		em {
+			font-style: italic;
+		}
+
+		div {
+			line-height: 1.4;
+			font-size: 20px;
+		}
+	}
+
+	@include media-query-mobile {
+		text-align: center;
+	}
+}
+
+#section-next {
+	@include Futura-Light;
+	color: $white;
+	padding: 60px 0;
+	background: $grey-darkest;
+
+	.btn-circle {
+		@include background-size(cover);
+		background-position: top left;
+		width: 260px;
+		height: 260px;
+		margin-bottom: 25px;
+
+		.content p {
+			@include Futura-Heavy;
+		}
+	}
+	
+	.header.small .subheader {
+		margin-top: 0;
+	}
+
+	.next-title {
+		font-size: 28px;
+		color: $white;
+	}
+
+	.header {
+		margin-bottom: 15px;
+	}
+
+	p {
+		font-size: 20px;
+	}
+
+	.timer {
+		color: $grey;
+		display: block;
+	}
+	
+	@include media-query-tablet {
+		text-align: center;
+		
+	}
+}
+
+#section-programs {
+	padding: 100px 0 115px;
+	background: $white;
+	text-align: center;
+
+	.header {
+		color: $default-text-color;
+		margin-bottom: 50px;
+	}
+}

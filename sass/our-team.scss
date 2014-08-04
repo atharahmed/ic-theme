@@ -1,0 +1,146 @@
+@import "partials/base";
+@import "partials/core";
+@import "partials/programs-slider";
+@import "partials/section-email-share";
+
+#section-header {
+	text-align: center;
+
+	.bg-image {
+		background-image: url(../images/our-team/header-bg.jpg);
+	}
+}
+
+#section-team-members {
+	background: $white;
+	padding: 20px 0;
+	overflow: hidden;
+
+	.container {
+		position: relative;
+	}
+
+	.team-member {
+		margin: 20px 0;
+		position: relative;
+
+		.btn-circle {
+			width: 235px;
+			height: 235px;
+			
+			.overlay {
+				color: $white;
+				
+				.member-name {
+					@include Futura-Heavy;
+					font-size: 18px;
+					margin-bottom: 5px;
+				}
+				
+				.job-title {
+					@include Futura-Light;
+				}
+			}
+		}
+		
+		&.selected {
+			&:before {
+				$width: 20px;
+				$height: 10px;
+				$color: $grey-darkest;
+				content: '';
+				border-left: $width / 2 solid transparent;
+				border-right: $width / 2 solid transparent;
+				border-bottom: $height solid $color;
+				position: absolute;
+				bottom: -20px;
+				z-index: 2;
+				left: 50%;
+				margin-left: -$width / 2;
+			}
+		}
+	}
+}
+
+.section-info {
+	position: absolute;
+	width: 100%;
+	overflow: hidden;
+	color: $white;
+	background: $grey-darkest;
+
+	.row {
+		padding-top: 50px;
+		padding-bottom: 20px;
+	}
+
+	.info {
+		text-align: center;
+
+		.member-name,
+		.job-title {
+			margin: 0;
+			line-height: 1;
+		}
+
+		.member-name {
+			@include Futura-Heavy;
+			font-size: 40px;
+			margin-bottom: 5px;
+		}
+
+		.job-title {
+			@include Futura-Light;
+			font-size: 26px;
+		}
+	}
+
+	.bio {
+		@include Futura-Light;
+		padding-top: 0px;
+		padding-bottom: 20px;
+	}
+	
+	@include media-query-mobile {
+		.bio {
+			text-align: center;
+		}
+	}
+}
+
+#section-info {
+	@include transition(height $default-transition-duration $default-transition-function);
+	background: $grey-darkest;
+	width: 100%;
+	display: none;
+	position: absolute;
+	left: 0;
+	margin: 0 0 20px;
+	overflow: hidden;
+	color: $white;
+}
+
+#section-jobs {
+	background: $grey-lightest;
+	position: relative;
+	text-align: center;
+	padding: 80px 0;
+	overflow: hidden;
+	border-top: 1px solid $grey-light;
+	background: $grey-lightest;
+
+	.header {
+		color: $default-text-color;
+		margin-bottom: 50px;
+
+		.subheader {
+			color: $default-text-color;
+		}
+	}
+	
+	.programs-slider {
+		&:before {
+			border-top-color: $grey-lightest;
+		}
+	}
+}

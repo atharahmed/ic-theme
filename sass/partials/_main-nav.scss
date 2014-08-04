@@ -1,0 +1,335 @@
+$menu-width: 320px;
+
+body,
+.push-menu,
+.header-menu-link {
+	$push-duration: 0.2s;
+	@include transition(left $push-duration ease, right $push-duration ease);
+	z-index: 1000;
+}
+
+body {
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+
+	&.open {
+		left: -$menu-width;
+	}
+}
+
+header {
+	@include transition-property(background, padding, left);
+	@include transition-duration(0.3s, 0.3s, 0.2s);
+	@include transition-timing-function(ease);
+	width: 100%;
+	padding: 30px 45px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10003;
+
+	a,
+	a:hover,
+	a:focus,
+	a:active{
+		color: #FFF;
+	}
+
+	#header-logo-link {
+		@include transition-property(width, height, opacity);
+		@include transition-duration(0.2s, 0.2s, 0.3s);
+		@include transition-timing-function(ease);
+		@include opacity(.5);
+		@include retina-background("logo", "png", 133px, 65px);
+		@include background-size(contain);
+		background-repeat: no-repeat;
+		float: left;
+		width: 133px;
+		height: 65px;
+		position: relative;
+
+		.no-touch & {
+			&:hover {
+				@include opacity(1);
+			}
+		}
+	}
+
+	#header-menu-link {
+		@include transition-property(opacity, right);
+		@include transition-duration(0.3s, 0.2s);
+		@include transition-timing-function(ease);
+		@include Futura-Heavy;
+		@include opacity(.5);
+		color: $white;
+		text-transform: uppercase;
+		position: absolute;
+		top: 50%;
+		right: 45px;
+		margin-top: -8px;
+
+		&:after {
+			@include IC-Icons;
+			font-size: 14px;
+			content: "\e60a";
+			margin-left: 10px;
+		}
+
+		.no-touch & {
+			&:hover { @include opacity(1); }
+		}
+
+		.open & {
+			@include opacity(1);
+		}
+	}
+	
+	.single-post &,
+	&.with-bg {
+		background: #000;
+		padding: 15px 45px;
+			
+		// bug fix for menu open/close animation gap
+		&:before {
+			content: '';
+			background: #000;
+			display: block;
+			width: 20px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: -10px;
+		}
+		
+		#header-logo-link {
+			@include retina-background("logo", "png", 100px, 49px);
+			background-repeat: no-repeat;
+			float: left;
+			width: 100px;
+			height: 49px;
+		}
+		
+		#header-menu-link {
+			right: 45px;
+		}
+	}
+	
+	.single-post & {
+		background: rgba(#000, 0.5);
+		
+		&.with-bg {
+			background: #000;
+		}
+	}
+	
+	.open & {
+		left: -$menu-width;
+	}
+	
+	@include media-query-mobile {
+		padding: 20px;
+		
+		#header-logo-link {
+			@include retina-background("logo", "png", 100px, 49px);
+			@include background-size(contain);
+			width: 100px;
+			height: 49px;
+		}
+		
+		#header-menu-link {
+			right: 20px;
+		}
+		
+		&.with-bg {
+			padding: 20px;
+			
+			#header-menu-link {
+				right: 20px;
+			}
+		}
+	}
+}
+
+.push-menu {
+	width: $menu-width;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	background: #000;
+	z-index: 10004;
+
+	.menu-scroll-container {
+		position: relative;
+		overflow: hidden;
+	}
+	
+	.menu-wrap {
+		padding: 45px 0;
+	}
+
+	&.right {
+		right: -$menu-width;
+		.open & { right: 0; }
+	}
+
+	&.left {
+		left: -$menu-width;
+		.open & { left: 0; }
+	}
+
+	.menu {
+		line-height: 1;
+	}
+
+	#close-btn {
+		@include transition(opacity 0.2s $default-transition-function);
+		position: absolute;
+		top: 40px;
+		right: 25px;
+		color: $white;
+		z-index: 500;
+		height: 40px;
+		width: 40px;
+		@include opacity(0.8);
+		
+		&:before {
+			top: 12px;
+			left: 12px;
+			position: relative;
+		}
+		
+		.no-touch &:hover {
+			@include opacity(1);
+		}
+	}
+
+	li {
+		border-left: 4px solid transparent;
+		line-height: 1;
+
+		a {
+			@include transition-property(padding, opacity);
+			@include transition-duration(0.2s);
+			@include transition-timing-function(ease);
+			@include inline-block;
+			@include Futura-Light;
+			@include opacity(0.8);
+			display: block;
+			padding: 2% 40px;
+			font-size: 24px;
+			color: $white;
+
+			&:first-child { margin-top: 0; }
+			
+			&:hover,
+			&:focus,
+			&:active {
+				color: $white;
+			}
+		}
+
+		.no-touch & {
+			&:hover {
+				border-left: 4px solid #00bc96;
+
+				a {
+					padding-left: 45px;
+					@include opacity(1);
+				}
+			}
+		}
+	}
+
+	#main-nav {
+		margin-bottom: 20px;
+	}
+
+	#main-secondary-nav {
+		li {
+			a {
+				position: relative;
+				color: $light-green;
+				
+				&:hover,
+				&:focus,
+				&:active {
+					color: $light-green;
+				}
+			}
+
+			&.shop a {
+				padding-right: 30px;
+
+				&:after {
+					@include IC-Icons;
+					content: "\e604";
+					position: relative;
+					font-size: 18px;
+					right: -10px;
+				}
+			}
+		}
+	}
+
+	#main-tertiary-nav {
+		margin-top: 20px;
+
+		li {
+
+			a {
+				@include opacity(0.5);
+				font-size: 18px;
+				position: relative;
+			}
+
+			&.crisis-tracker a {
+				padding-right: 20px;
+
+				&:after {
+					@include IC-Icons;
+					content: "\e604";
+					position: relative;
+					font-size: 12px;
+					right: -10px;
+				}
+			}
+
+			.no-touch & {
+				&:hover {
+					a {
+						@include opacity(1);
+					}
+				}
+			}
+		}
+
+		.email {
+			@include inline-block;
+			margin-top: 30px;
+		}
+	}
+
+	#menu-social {
+		margin-top: 30px;
+		padding: 0 40px;
+
+		.twitter {
+			margin-top: 10px;
+		}
+
+		#menu-made-for {
+			@include Futura-Book;
+			@include opacity(0.5);
+			
+			font-size: 15px;
+			color: #FFF;
+			margin-top: 35px;
+			line-height: 1.2;
+
+			b {
+				@include Futura-Heavy;
+			}
+		}
+	}
+}

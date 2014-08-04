@@ -1,0 +1,248 @@
+@import "partials/base";
+@import "partials/core";
+@import "partials/email-form";
+
+#section-header {
+	text-align: center;
+
+	.bg-image {
+		background-image: url(../images/blog/header-bg.jpg);
+	}
+}
+
+#section-filter {
+	background: $grey-lightest;
+	padding: 10px 0;
+	border-bottom: 1px solid $grey-light;
+
+	.controls-wrap {
+		position: relative;
+		max-width: 395px;
+		width: 100%;
+		margin: 0 auto;
+		padding-right: 75px;
+
+		.categories-form {
+			.form-group {
+				@include transition(opacity $default-transition-duration $default-transition-function);
+				@include opacity(1);
+				margin-bottom: 0;
+				max-width: 320px;
+				margin: 0 auto;
+			}
+		}
+		
+		.search-form {
+			@include transition(width $default-transition-duration $default-transition-function);
+			overflow: hidden;
+			min-width: 60px;
+			width: 0%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			-webkit-backface-visibility: hidden;
+
+			.form-group {
+				height: 100%;
+				
+				input[type="search"] {
+					position: absolute;
+					right: -60px;
+					z-index: 0;
+					-webkit-appearance: none;
+				}
+
+				#submit-btn-wrap {
+					position: relative;
+					z-index: 1;
+					float: right;
+					height: 100%;
+					display: block;
+
+					.btn {
+						min-width: 0px;
+						width: 60px;
+						height: 100%;
+						padding: 0;
+						background: $white;
+						color: $default-text-color;
+
+						&:hover {
+							background: $green;
+							color: $white;
+						}
+
+						&:active {
+							background: $green-light;
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+
+		&.search-open {
+			.categories-form {
+				.form-group {
+					@include opacity(0);
+				}
+			}
+				
+			.search-form {
+				width: 100%;
+
+				input[type="search"] {
+					padding-right: 75px;
+					right: 0;
+				}
+
+				#submit-btn-wrap {
+					.btn {
+						@include border-radius(0 3px 3px 0);
+						background: $green;
+						color: $white;
+
+						&:hover { background: $green-dark; }
+						&:active { background: $green-light; }
+					}
+				}
+			}
+		}
+	}
+}
+
+#section-posts {
+	.post {
+		border-bottom: 1px solid $grey-light;
+		padding: 75px 0;
+
+		.btn-circle {
+			@include Futura-Heavy;
+			@include background-size(cover);
+			background-position: center center;
+			width: 250px;
+			height: 250px;
+			margin-bottom: 20px;
+			color: $default-text-color;
+			
+			&:hover,
+			&:focus,
+			&:active {
+				color: $default-text-color;
+			}
+		}
+
+		.date,
+		.author {
+			@include Futura-Heavy;
+			font-size: 16px;
+			text-align: center;
+			margin: 0;
+		}
+		
+		.author a {
+			@include transition(color $default-transition-duration $default-transition-function);
+			color: $green;
+			
+			&:hover {
+				color: $green-dark;
+			}
+		}
+
+		.header {
+			margin: 0;
+			color: $default-text-color;
+		}
+		
+		.excerpt {
+			@include Futura-Light;
+			font-size: 20px;
+		}
+
+		&:nth-child(odd) {
+			background: $white;
+		}
+
+		&:nth-child(even) {
+			background: $grey-lightest;
+		}
+	}
+
+	@include media-query-tablet {
+		.post {
+			text-align: center;
+			padding: 40px 0;
+			
+			.circle-graphic {
+				margin-bottom: 20px;
+			}
+			
+			.author {
+				margin-bottom: 40px;
+			}
+
+			.header,
+			.excerpt {
+				text-align: center;
+			}
+		}
+	}
+}
+
+#section-pagination {
+	background: $grey-lightest;
+	padding: 10px 0;
+	border-bottom: 1px solid $grey-light;
+
+	.btn {
+		width: 230px;
+		margin: 0 5px;
+	}
+
+	.blog-buttons {
+		@include inline-block;
+		position: relative;
+
+		.ic-icon-left-arrow {
+			float: left;
+		}
+
+		.ic-icon-right-arrow {
+			float: right;
+		}
+	}
+
+	@include media-query-mobile {
+		.blog-buttons {
+			display: block;
+
+			&:first-child {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+/* Email Sign-Up
+*******************************************/
+#section-email-sign-up {
+	padding: 80px 0;
+	text-align: center;
+	background: $white;
+	
+	.header.smallest {
+		color: $green;
+		margin-bottom: 10px;
+	}
+	
+	.header.medium {
+		color: $default-text-color;
+
+		.subheader {
+			padding: 0 10%;
+		}
+
+		margin-bottom: 60px;
+	}
+}

@@ -1,0 +1,153 @@
+/* Icons
+*******************************************/
+@mixin IC-Icons {
+	font-family: 'ic-icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+	font-family: 'ic-icons';
+	src:url('fonts/ic-icons/ic-icons.eot?-blek9x');
+	src:url('fonts/ic-icons/ic-icons.eot?#iefix-blek9x') format('embedded-opentype'),
+	url('fonts/ic-icons/ic-icons.woff?-blek9x') format('woff'),
+	url('fonts/ic-icons/ic-icons.ttf?-blek9x') format('truetype'),
+	url('fonts/ic-icons/ic-icons.svg?-blek9x#ic-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="ic-icon-"], [class*=" ic-icon-"] {
+	@include IC-Icons;
+}
+
+.ic-icon-instagram:before {
+	content: "\e61a";
+}
+.ic-icon-search:before {
+	content: "\e619";
+}
+.ic-icon-libertytriangle:before {
+	content: "\e618";
+}
+.ic-icon-playbutton:before {
+	content: "\e617";
+}
+.ic-icon-download-arrow:before {
+	content: "\e616";
+}
+.ic-icon-airplane:before {
+	content: "\e615";
+}
+.ic-icon-question:before {
+	content: "\e612";
+}
+.ic-icon-invisiblelogo:before {
+	content: "\e613";
+}
+.ic-icon-dollabill:before {
+	content: "\e614";
+}
+.ic-icon-youtube:before {
+	content: "\e60f";
+}
+.ic-icon-vimeo:before {
+	content: "\e610";
+}
+.ic-icon-timer:before {
+	content: "\e611";
+}
+.ic-icon-crisis-tracker-logo:before {
+	content: "\e60e";
+}
+.ic-icon-program-cap:before {
+	content: "\e609";
+}
+.ic-icon-program-shield:before {
+	content: "\e60b";
+}
+.ic-icon-program-home:before {
+	content: "\e60c";
+}
+.ic-icon-program-hand:before {
+	content: "\e60d";
+}
+.ic-icon-twitter:before {
+	content: "\e600";
+}
+.ic-icon-googleplus:before {
+	content: "\e601";
+}
+.ic-icon-facebook:before {
+	content: "\e602";
+}
+.ic-icon-heart:before {
+	content: "\e605";
+}
+.ic-icon-close:before {
+	content: "\e606";
+}
+.ic-icon-checkmark:before {
+	content: "\e607";
+}
+.ic-icon-menu:before {
+	content: "\e60a";
+}
+.ic-icon-left-arrow:before {
+	content: "\e603";
+}
+.ic-icon-right-arrow:before {
+	content: "\e604";
+}
+.ic-icon-down-arrow:before {
+	content: "\e608";
+}
+
+/* Futura
+*******************************************/
+
+@mixin Futura-Light {
+	font-family: "futura-pt",sans-serif;
+	font-style: normal;
+	font-weight: 300;
+}
+
+@mixin Futura-Book {
+	font-family: "futura-pt",sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
+@mixin Futura-Medium {
+	font-family: "futura-pt",sans-serif;
+	font-style: normal;
+	font-weight: 500;
+}
+
+@mixin Futura-Heavy {
+	font-family: "futura-pt",sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+
+/* Garamond
+*******************************************/
+@mixin Garamond-Regular {
+	font-family: "adobe-garamond-pro",sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
+@mixin Garamond-Bold {
+	font-family: "adobe-garamond-pro",sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}

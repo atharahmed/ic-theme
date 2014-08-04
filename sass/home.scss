@@ -1,0 +1,432 @@
+@import "partials/base";
+@import "partials/core";
+@import "partials/email-form";
+@import "partials/programs-slider";
+@import "partials/social-share";
+
+/* Header
+*******************************************/
+
+#section-home-heading {
+	color: #FFF;
+	text-align: center;
+	overflow: hidden;
+	padding: 255px 0 130px;
+	position: relative;
+
+	.video-bg {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		background-color: $grey-darkest;
+		background-image: image-url('home/video-placeholder.jpg');
+		background-repeat: no-repeat;
+		@include background-size(cover);
+
+		video {
+			min-width: 100%;
+			min-height: 100%;
+			position: relative;
+			z-index: 0;
+			top: 0;
+			display: block;
+		}
+	}
+
+	.transparent-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background: rgba(0,0,0,.1);
+	}
+
+	.container {
+		position: relative;
+		z-index: 2;
+	}
+	
+	.btn-default {
+		margin-top: 45px;
+	}
+	
+	@include media-query-mobile {
+		padding: 150px 0 100px;
+	}
+}
+
+/* Kony Intro
+*******************************************/
+
+#section-kony-intro {
+	background: $grey-darkest;
+	@include background-image(linear-gradient(top, rgba(0, 0, 0, 0.75) 0%, transparent 40%));
+	padding: 100px 0 60px;
+	color: $white;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	
+	.container {
+		position: relative;
+		z-index: 2;
+	}
+
+	.bg-img-wrap {
+		width: 100%;
+		position: absolute;
+		bottom: -10%;
+		z-index: 0;
+		text-align: center;
+		
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	.header {
+		margin-bottom: 50px;
+	}
+
+	p {
+		@include Futura-Light; 
+		font-size: 26px;
+	}
+	
+	.btn-border {
+		margin: 40px 0 130px;
+	}
+	
+	@include media-query-tablet {
+		padding: 60px 0 30px;
+		
+		.bg-img-wrap {
+			bottom: 0px;
+		}
+		
+		.btn-border {
+			margin: 20px 0 60px;
+		}
+	}
+}
+
+/* Our Work
+*******************************************/
+#section-our-work {
+	@include box-sizing(content-box);
+	border-top: 1px solid $white;
+	border-bottom: 1px solid $white;
+	position: relative;
+	text-align: center;
+	padding-top: 85px;
+	overflow: hidden;
+
+	.header {
+		color: $green;
+		margin-bottom: 90px;
+		
+		.subheader {
+			color: $default-text-color;
+		}
+	}
+	
+	@include media-query-mobile {
+		padding-top: 40px;
+		
+		.header {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+/* Get Involved
+*******************************************/
+#section-get-involved {
+	background: $grey-lightest;
+	color: $default-text-color;
+	text-align: center;
+	padding: 100px 0 40px;
+	border-top: 1px solid $grey-light;
+	border-bottom: 1px solid $grey-light;
+
+	.header {
+		color: $default-text-color;
+		margin-bottom: 75px;
+		
+		.intro {
+			color: $green;
+		}
+		
+		.subheader {
+			&:before {
+				border-bottom-color: $grey;
+			}
+		}
+	}
+	
+	.action-item {
+		@include Futura-Light;
+		display: block;
+		margin-bottom: 60px;
+
+		.btn-circle {
+			.header {
+				margin-bottom: 0;
+				color: $white;
+			}
+		}
+		
+		p {
+			font-size: 20px;
+			padding: 0 5%;
+		}
+	}
+	
+	.btn-continue-arrow {
+		color: $default-text-color;
+	}
+	
+	@include media-query-tablet {
+		padding: 100px 0 30px;
+		
+		.action-item {
+			.circle-graphic {
+				width: 180px;
+				height: 180px;
+
+				&.give {
+					padding-top: 45px;
+				}
+
+				&.advocate {
+					padding-top: 40px;
+				}
+			}
+
+			.header.smallest .subheader {
+				padding: 0;
+			}
+		}
+	
+		.btn-continue-arrow {
+			color: $default-text-color;
+			margin-top: 20px;
+		}
+	}
+	
+	@include media-query-mobile {
+		padding: 50px 0 30px;
+		
+		.header.medium {
+			margin-bottom: 50px;
+		}
+		
+		.action-item {
+			.header.smallest {
+				margin: 20px 0 40px;
+			}	
+		}
+	}
+}
+
+/* News
+*******************************************/
+#section-news {
+	background-color: $green;
+	padding: 95px 0 70px;
+	text-align: center;
+	
+	.header {
+		margin-bottom: 80px;
+
+		.intro {
+			color: $default-text-color;
+
+		}
+	}
+
+	.news-column {
+		float: left;
+		width: 33.333%;
+
+		&.left,
+		&.right {
+			.post {
+				height: 400px;
+			}
+			
+			.post:nth-child(1) {
+				@include border-radius(3px 3px 0 0);
+			}
+		}
+		
+		&.left {
+			.post:nth-child(3) {
+				@include border-radius(0 0 0 3px);
+			}
+		}
+
+		&.middle {
+			padding-top: 110px;
+			.post {
+				height: 290px;
+			}
+			
+			.post:nth-child(4) {
+				@include border-radius(0 0 3px 3px);
+			}
+		}
+		
+		&.right {
+			.post:nth-child(3) {
+				@include border-radius(0 0 3px 0);
+			}
+		}
+
+		@include media-query-tablet {
+			width: 100%;
+			float: none;
+			
+			&.middle {
+				padding-top: 0;
+			}
+			
+			&.left,
+			&.middle,
+			&.right {
+				.post {
+					height: auto;
+				}
+			}
+		}
+	}
+
+	.post {
+		@include transition-property(background, color);
+		@include transition-duration(0.3s);
+		@include transition-timing-function(ease);
+		display: block;
+		color: $default-text-color;
+		background-color: $white;
+		text-align: left;
+		padding: 30px;
+		position: relative;
+		
+		span {
+			display: block;
+		}
+		
+		.date {
+			@include Futura-Heavy;
+			font-size: 12px;
+			position: relative;
+			z-index: 1;
+		}
+		
+		.title {
+			@include Futura-Heavy;
+			text-transform: uppercase;
+			margin-top: 5px;
+			font-size: 25px;
+			position: relative;
+			z-index: 2;
+		}
+		
+		.no-touch &:hover {
+			background-color: $grey-dark;
+			color: $white;
+		}
+		
+		&.with-bg-image {
+			@include background-size(cover);
+			background-position: center center;
+			color: $white;
+			
+			.date,
+			.title {
+				@include single-text-shadow;
+			}
+				
+			&:after {
+				@include transition-property(background-color, opacity);
+				@include transition-duration($default-transition-duration);
+				@include transition-timing-function($default-transition-function);
+				@include opacity(0.2);
+				content: '';
+				background-color: #000;
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 0;
+			}
+			
+			.no-touch &:hover {
+				color: $white;
+				background-color: $white;
+				
+				&:after {
+					@include opacity(0.6);
+					background-color: $green;
+				}
+			}
+		}
+	}
+
+	.btn-blog {
+		margin-top: 50px;
+	}
+	
+	@include media-query-tablet {
+		.middle,
+		.right {
+			display: none;
+		}
+		
+		.left {	
+			.post {
+				@include border-radius(3px !important);
+				margin-top: 20px;
+				
+				&:nth-child(1) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+	
+	@include media-query-mobile {
+		padding: 50px 0;
+	}
+}
+
+/* Email Sign-Up
+*******************************************/
+
+#section-email-sign-up {
+	padding: 80px 0;
+	text-align: center;
+	
+	.header {
+		color: $default-text-color;
+		
+		.subheader {
+			padding: 0 10%;
+		}
+		
+		margin-bottom: 60px;
+	}
+
+	form {
+		margin-bottom: 80px;
+	}
+}

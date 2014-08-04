@@ -1,0 +1,300 @@
+$button-transition-duration: 0.3s;
+$button-transition-ease: ease;
+
+.btn {
+	@include Futura-Heavy;
+	@include transition-property(background, color, border-color, opacity);
+	@include transition-duration($button-transition-duration);
+	@include transition-timing-function($button-transition-ease);
+	@include border-radius(4px);
+	@include inline-block;
+	line-height: 1;
+	outline: none !important;
+
+	&:active {
+		@include box-shadow(none);
+	}
+
+	&.btn-default,
+	&.btn-border,
+	&.btn-filter {
+		min-width: 215px;
+		font-size: 16px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	&.btn-default {
+		color: #FFF;
+		border: none;
+		padding: 20px;
+
+		.no-touch & {
+			&:hover,
+			&:active,
+			&:focus {
+				color: $white;
+			}
+		}
+
+		&.primary {
+			background: $green;
+
+			.no-touch & {
+				&:hover { background: $green-dark; }
+				&:active { background: $green-light; }
+			}
+		}
+
+		&.secondary {
+			background: $red;
+
+			.no-touch & {
+				&:hover { background: $red-dark; }
+				&:active { background: $red-light; }
+			}
+		}
+
+		&.tertiary {
+			background: $blue;
+
+			.no-touch & {
+				&:hover { background: $blue-dark; }
+				&:active { background: $blue-light; }
+			}
+		}
+
+		&.quaternary {
+			background: $grey;
+			color: $grey-darker;
+
+			.no-touch & {
+				&:hover {
+					background: $grey-dark;
+					color: $white;
+				}
+
+				&:active {
+					background: $grey-light;
+					color: $default-text-color;
+				}
+
+				&:disabled {
+					background: $grey-light;
+					color: $white;
+				}
+			}
+		}
+	}
+
+	&.btn-border {
+		border-width: 3px;
+		border-style: solid;
+		padding: 14px;
+
+		&.primary {
+			border-color: $green;
+			color: $green;
+
+			.no-touch & {
+				&:hover {
+					background: $green;
+					color: $white;
+				}
+
+				&:active {
+					background: $green-light;
+					border-color: $green-light;
+					color: $white;
+				}
+			}
+		}
+
+		&.secondary {
+			border-color: $red;
+			color: $white;
+
+			.no-touch & {
+				&:hover {
+					background: $red;
+					color: $white;
+				}
+
+				&:active {
+					background: $red-light;
+					border-color: $red-light;
+					color: $white;
+				}
+			}
+		}
+
+		&.tertiary {
+			border-color: $blue;
+			color: $blue;
+
+			.no-touch & {
+				&:hover {
+					background: $blue;
+					color: $white;
+				}
+
+				&:active {
+					background: $blue-light;
+					border-color: $blue-light;
+					color: $white;
+				}
+			}
+		}
+
+		&.quaternary {
+			border-color: $white;
+			color: $white;
+
+			.no-touch & {
+				&:hover {
+					background: $white;
+					color: $grey-darker;
+				}
+
+				&:active {
+					background: $grey-light;
+					border-color: $grey-light;
+					color: $grey-darker;
+				}
+			}
+		}
+	}
+
+	&.btn-filter {
+		background: $white;
+		color: $default-text-color;
+		border: none;
+		padding: 15px;
+
+		&.selected { background: $green; color: $white; }
+		.no-touch & {
+			&:hover { background: $green; color: $white; }
+			&:active { background: $green-light; color: $white; }
+		}
+
+		&.red {
+			&.selected { background: $red; color: $white; }
+			.no-touch & {
+				&:hover { background: $red; color: $white; }
+				&:active { background: $red-light; color: $white; }
+			}
+		}
+	}
+
+	&.btn-social {
+		@include inline-block;
+		@include border-radius(50%);
+		border: 2px solid $green;
+		width: 40px;
+		height: 40px;
+		color: $green;
+		position: relative;
+		padding: 0;
+
+		&:before {
+			@include IC-Icons;
+			font-size: 20px;
+			position: relative;
+		}
+
+		.no-touch & {
+			&:hover {
+				background: $green;
+				color: $white;
+			}
+		}
+
+		&.facebook:before {
+			content: "\e602";
+			top: 8px;
+		}
+
+		&.twitter:before {
+			content: "\e600";
+			top: 8px;
+		}
+
+		&.google-plus:before {
+			content: "\e601";
+			top: 8px;
+			left: 2px;
+		}
+
+		&.vimeo:before {
+			content: "\e610";
+			top: 11px;
+			font-size: 16px;
+		}
+
+		&.youtube:before {
+			content: "\e60f";
+			top: 7px;
+		}
+
+		&.instagram:before {
+			content: "\e61a";
+			top: 8px;
+		}
+
+		&.white {
+			border: 2px solid $white;
+			color: $white;
+
+			.no-touch & {
+				&:hover {
+					background: $white;
+					color: $green;
+				}
+			}
+		}
+	}
+
+	&.btn-continue-arrow {
+		@include inline-block;
+		@include opacity(.5);
+		font-size: 14px;
+		text-align: center;
+		text-transform: uppercase;
+		color: $white;
+		letter-spacing: 1px;
+		padding: 0;
+		line-height: 1.6;
+
+		&:after {
+			@include IC-Icons;
+			content: "\A\e608";
+  			white-space: pre;
+			font-size: 18px;
+		}
+
+		.no-touch & {
+			&:hover {
+				@include opacity(1);
+			}
+		}
+	}
+}
+
+.slideshow-nav-button {
+	@include transition-property(background);
+	@include transition-duration($button-transition-duration);
+	@include transition-timing-function($button-transition-ease);
+	@include border-radius(50%);
+	@include inline-block;
+	width: 40px;
+	height: 40px;
+	color: $white;
+	border: 2px solid $white;
+	background: $grey;
+
+	.no-touch & {
+		&:hover {
+			background: $grey-light;
+		}
+	}
+}

@@ -1,0 +1,139 @@
+/* Bxslider Custom Prev/Next Buttons
+ **************************************/
+
+.slider {
+	position: relative;
+	margin: 75px 0 50px;
+
+	&.generic {
+		.bx-viewport {
+			height: auto !important;
+		}
+
+		&.mobile img {
+			height: 350px;
+			width: auto;
+		}
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.caption {
+		padding-top: 5px;
+		text-align: left;
+		display: block;
+
+		p {
+			@include inline-block;
+			font-size: 20px !important;
+			margin: 0;
+
+			&.picture-caption {
+				@include Futura-Light;
+				max-width: 85%;
+				position: absolute;
+			}
+
+			&.slide-counter {
+				@include Garamond-Regular;
+				width: 100px;
+				vertical-align: top;
+			}
+		}
+	}
+
+	.outside-controls {
+		position: absolute;
+		top: 50%;
+		margin-top: -30px;
+		z-index: 20;
+		width: 100%;
+
+		#slider-prev {
+			position: absolute;
+			left: 10px;
+		}
+
+		#slider-next {
+			position: absolute;
+			right: 10px;
+		}
+
+		.slider-arrow {
+			@include inline-block;
+			@include border-radius(50%);
+			@include transition(background $default-transition-duration $default-transition-function);
+			border: 2px solid $white;
+			width: 40px;
+			height: 40px;
+			color: $white;
+			position: relative;
+			padding: 0;
+			text-align: center;
+			background: rgba(0,0,0,.3);
+
+			&:hover {
+				background: rgba(0,0,0,.1);
+			}
+
+			&:before {
+				@include IC-Icons;
+				font-size: 20px;
+				position: relative;
+			}
+
+			&.prevslide:before {
+				content: "\e603";
+				top: 8px;
+				right: 2px;
+			}
+
+			&.nextslide:before {
+				content: "\e604";
+				top: 8px;
+				left: 2px;
+			}
+		}
+	}
+
+	@include media-query-mobile-small {
+		margin-left: 25px !important;
+		margin-right: 25px !important;
+
+		.caption {
+			p {
+				font-size: 15px !important;
+
+				&.slide-counter {
+					width: 70px;
+				}
+			}
+		}
+
+		.outside-controls {
+			.slider-arrow {
+				border: 0;
+				color: $grey;
+				background: 0;
+
+				&:hover {
+					background: 0 !important;
+				}
+			}
+		}
+
+		#slider-prev {
+			left: -35px !important;
+		}
+
+		#slider-next {
+			right: -35px !important;
+		}
+	}
+}
+
+
+
+

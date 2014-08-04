@@ -1,0 +1,265 @@
+@import "partials/base";
+@import "partials/core";
+@import "partials/bxslider-slideshow";
+@import "partials/section-our-team";
+@import "partials/section-email-share";
+
+#section-header {
+	text-align: center;
+	padding: 240px 0 180px;
+	
+	.bg-image {
+		background-image: url(../images/get-involved/header-bg.jpg);
+	}
+	
+	.header {
+		.subheader {
+			padding: 0 15%;
+		}
+	}
+	
+	@include media-query-tablet {
+		.header {
+			.subheader {
+				padding: 0;
+			}
+		}
+	}
+}
+
+#section-intro {
+	text-align: center;
+	background: $white;
+	color: $default-text-color;
+	padding: 80px 0 100px;
+
+	.header {
+		color: $default-text-color;
+		padding-bottom: 50px;
+		position: relative;
+
+		.intro {
+			color: $green;
+		}
+		
+		.subheader {
+			&:before {
+				border-bottom-color: $grey-light; 
+			}
+		}
+	}
+	
+	p {
+		@include Futura-Light;
+		font-size: 24px;
+	}
+	
+	.btn {
+		margin: 50px 0 20px;
+	}
+	
+	.watch-video {
+		@include transition(color $default-transition-duration $default-transition-function);
+		@include Futura-Heavy;
+		text-transform: uppercase;
+		font-size: 16px;
+		color: $green;
+		
+		&:hover,
+		&:active,
+		&:focus {
+			color: $green-dark;
+		}
+	}
+}
+
+#section-volunteers {
+	text-align: center;
+	padding: 120px 0;
+	background: $grey-lightest;
+
+	&:before {
+		@include arrow($white);
+	}
+
+	.header {
+		color: $default-text-color;
+	}
+
+	.images {
+		.photo-mosaic {
+			max-width: 399px;
+			margin: 0 auto;
+
+			.mosaic-row {
+				position: relative;
+
+				.photo,
+				.color-block {
+					width: 33.3333333%;
+					display: block;
+					float: left;
+
+					img {
+						width: 100%;
+						height: auto;
+						display: block;
+					}
+				}
+
+				.color-block img {
+					visibility: hidden;
+				}
+
+				&.top {
+					.photo:first-child {
+						width: 66.66666666%;
+					}
+
+					.photo:nth-child(2),
+					.color-block {
+						right: 0;
+					}
+
+					.color-block {
+						background: $green;
+						right: 0;
+						bottom: -10%;
+					}
+				}
+
+				&.bottom {
+					top: -1px;
+
+					.color-block {
+						background: $grey-lightest;
+					}
+				}
+			}
+		}
+	}
+
+	.text {
+		.header {
+			line-height: 1.3;
+
+			img {
+				position: relative;
+				top: 7px;
+				margin: 0 5px;
+			}
+		}
+
+		p {
+			@include Futura-Light;
+			font-size: 24px;
+			padding: 0 5%;
+		}
+	}
+
+	.cta {
+		.header {
+			text-transform: none;
+			margin: 60px 0 20px;
+		}
+
+		.btn {
+			margin-bottom: 20px;
+		}
+	}
+
+	.donate {
+		@include transition(color $default-transition-duration $default-transition-function);
+		@include Futura-Heavy;
+		text-transform: uppercase;
+		font-size: 16px;
+		color: $green;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $green-dark;
+		}
+	}
+
+	@include media-query-tablet {
+		.text {
+			.header {
+				img {
+					width: 40px;
+					height: auto;
+				}
+			}
+
+			p {
+				font-size: 20px;
+			}
+		}
+	}
+
+	@include media-query-mobile {
+		padding: 80px 0;
+
+		.images {
+			.photo-mosaic {
+				margin-bottom: 60px;
+			}
+		}
+	}
+}
+
+#section-culture {
+	padding: 80px 0;
+	background-color: $grey-darkest;
+
+	.header {
+		text-align: center;
+		
+		.intro { color: $green; }
+	}
+	
+	.slider {
+		.bx-caption,
+		.slide-counter {
+			color: $white;
+		}
+	}
+}
+
+#section-our-team {
+	padding: 100px 0;
+	background-color: $grey-lightest;
+	border-top: 1px solid $grey-light;
+	border-bottom: 1px solid $grey-light;
+	
+	.header {
+		color: $default-text-color;
+	}
+}
+
+#section-sign-up {
+	background: $white;
+	text-align: center;
+	padding: 80px 0 100px;
+	
+	.header {
+		color: $default-text-color;
+		margin-bottom: 40px;
+		
+		.intro {
+			color: $green;
+		}
+		
+		.subheader {
+			&:before {
+				border-bottom-color: $grey-light;
+			}
+		}
+	}
+	
+	form {
+		button[type="submit"] {
+			margin-top: 20px;
+		}
+	}
+}

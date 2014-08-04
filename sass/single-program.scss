@@ -1,0 +1,173 @@
+@import "partials/base";
+@import "partials/core";
+@import "partials/email-form";
+@import "partials/bxslider-slideshow";
+@import "partials/social-share";
+@import "partials/related-article";
+@import "partials/section-email-share";
+
+// Top icon
+.page-flyer-drops {
+	.top-icon:before {
+		content: "\e615";
+	}
+}
+
+// Styling content from the WYSIWYG editor
+.post-content {
+	margin-bottom: 65px;
+
+	h1, h2, h3, h4, h5, h6 {
+		@include Futura-Medium;
+		font-size: 28px;
+	}
+
+	strong {
+		font-weight: 600;
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	div {
+		line-height: 1.4;
+		font-size: 20px;
+	}
+
+	&.first {
+		margin-bottom: 0;
+		p:first-child {
+			@include Futura-Light;
+			font-size: 28px;
+		}
+	}
+}
+
+#section-header {
+	text-align: center;
+
+	.top-icon {
+		width: 120px;
+		height: 120px;
+		position: relative;
+		font-size: 75px;
+		margin: 0 auto;
+		padding: 90px 10px 10px 10px;
+		display: block;
+
+		img {
+			width: 100%;
+			height: auto;
+			color: $white;
+		}
+	}
+
+	.header {
+		padding-top: 85px;
+	}
+}
+
+#section-content {
+	background: $white;
+
+	.watch-video {
+		background: $grey-lightest;
+		padding: 15px 0;
+		border-bottom: 2px solid $grey-light;
+
+		.btn {
+			margin: 0 auto;
+			width: 215px;
+			display: block;
+		}
+	}
+
+	.main-content {
+		padding: 40px 0 0;
+		background: $white;
+	}
+
+	.program-stats {
+		background: image-url('get-involved/header-bg.jpg');
+		@include background-size(cover);
+		position: relative;
+		margin-top: 65px;
+		padding: 70px 0;
+		color: $white;
+
+		&:before {
+			@include arrow($white);
+		}
+
+		p, span {
+			color: $white !important;
+		}
+
+		.header.medium {
+			text-align: center;
+		}
+
+		.statistic {
+			@include Futura-Heavy;
+			font-size: 36px;
+			margin: 0;
+			text-align: center;
+
+			&:not(:first-child) {
+				margin-top: 1em;
+			}
+
+			.description {
+				font-size: 26px;
+				font-weight: 300;
+				display: block;
+			}
+		}
+	}
+}
+
+.program-text {
+	@include media-query-mobile {
+		text-align: center;
+	}
+}
+
+#section-next {
+	background: $grey-darkest;
+	color: $white;
+
+	.header, .timer, .next-title {
+		color: $white;
+	}
+
+	@include media-query-mobile {
+		text-align: center;
+	}
+}
+
+#section-slider {
+	background: $white;
+	padding: 0 0 75px;
+}
+
+#section-donate {
+	padding: 80px 0;
+	text-align: center;
+	background: $white;
+
+	.header.smallest {
+		color: $green;
+		margin-bottom: 10px;
+	}
+
+	.header.medium {
+		color: $default-text-color;
+
+		.subheader {
+			padding: 0 10%;
+		}
+
+		margin-bottom: 60px;
+	}
+}

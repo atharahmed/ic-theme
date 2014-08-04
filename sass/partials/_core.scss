@@ -1,0 +1,500 @@
+@import "compass/reset";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "partials/base";
+@import "partials/headers";
+@import "partials/buttons";
+@import "partials/inputs";
+@import "partials/general-controls";
+@import "partials/main-nav";
+@import "partials/fancybox";
+
+
+p {
+	line-height: 1.4;
+	margin: 1.2em 0;
+	font-size: 20px;
+}
+
+a {
+	@include transition(color $default-transition-duration $default-transition-function);
+	text-decoration: none;
+	color: $green;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $green;
+		text-decoration: none;
+		outline: none;
+	}
+
+	.no-touch &:hover {
+		color: $green-dark;
+	}
+
+	&.underline {
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: underline;
+		}
+	}
+
+	.link-arrow {
+		&:after {
+			@include IC-Icons;
+			content: "\e604";
+			position: absolute;
+			right: 0px;
+		}
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+section {
+	background: $grey-darkest;
+	position: relative;
+
+	&.white {
+		background-color: $white;
+	}
+}
+
+body {
+	@include Garamond-Regular;
+	text-rendering: optimizeLegibility;
+	color: $default-text-color;
+	background: transparent;
+
+	.page-heading {
+		padding: 150px 0 6px;
+
+		h1 {
+			color: #ffffff;
+
+			&.programs-header {
+				line-height: 1.1;
+			}
+		}
+	}
+
+	h2 {
+		line-height: 1.1;
+	}
+}
+
+footer {
+	$link-hover: 1;
+	$link-no-hover: 0.4;
+	@include Futura-Medium;
+	font-size: 18px;
+	background: lighten($grey-darkest, 5%);
+	padding: 40px 0;
+	color: $white;
+	position: relative;
+	overflow: hidden;
+
+	a {
+		@include opacity($link-no-hover);
+		transition-property: opacity;
+		transition-duration: $default-transition-duration;
+		transition-timing-function: $default-transition-function;
+		color: $white;
+
+		.no-touch &:hover {
+			@include opacity($link-hover);
+			color: #FFF;
+		}
+	}
+
+	#footer-logo-link {
+		@include retina-background("footer-logo", "png", 80px, 39px);
+		display: block;
+		width: 80px;
+		height: 36px;
+		float: left;
+		margin-left: 15px;
+
+		.no-touch &:hover {
+			@include opacity($link-hover);
+		}
+	}
+
+	#footer-social-links {
+		display: block;
+		vertical-align: middle;
+		float: right;
+		margin-right: 15px;
+
+		li {
+			@include inline-block;
+			margin: 8px 10px 5px 0;
+
+			.social-icon {
+			
+				&:before {
+					font-size: 20px;
+				}
+
+				&.ic-icon-vimeo:before {
+					font-size: 17px;
+				}
+			}
+		}
+	}
+
+	.menu {
+		margin-top: 8px;
+
+		li {
+			@include inline-block;
+			@include opacity($link-no-hover);
+			margin: 0 20px;
+
+			&:last-child {
+				@include Futura-Book;
+			}
+		}
+	}
+
+	@include media-query-tablet {
+		#footer-social-links {
+			float: left;
+		}
+
+		.menu {
+			top: 0;
+			float: none;
+
+			li {
+				display: block;
+				margin: 0;
+				padding-bottom: 8px;
+				text-align: left;
+			}
+		}
+	}
+	
+	@include media-query-mobile {
+		#footer-logo-link {
+			float: none;
+			margin: 0 auto 10px;
+		}
+		
+		.menu {
+			.menu-item {
+				text-align: center;
+			}
+		}
+		
+		#footer-social-links {
+			float: none;
+			margin: 10px 0 0;
+			text-align: center;
+		}
+	}
+}
+
+/* Page Header
+*******************************************/
+
+.page-header {
+	border-bottom: 0;
+	margin: 0;
+	padding: 0;
+	background: transparent !important;
+
+	.bg-image {
+		@include transition(left 0.2s $default-transition-function);
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		background-position: center center;
+		background-repeat: no-repeat;
+		@include background-size(cover);
+		
+		.open & {
+			left: -320px;
+		}
+	}
+}
+
+/* General UI Elements
+*******************************************/
+
+.circle-graphic {
+	@include transition(background-color $default-transition-duration $default-transition-function);
+	@include border-radius(50%);
+	width: 220px;
+	height: 220px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.overlay {
+		@include transition(opacity 0.3s ease);
+		@include border-radius(130px);
+		@include opacity(0);
+		background: rgba(#000, .5);
+		width: 210px;
+		height: 210px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: table;
+		z-index: 1;
+		
+		.content {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		
+		.first-line,
+		.second-line {
+			display: block;
+			width: 80%;
+			margin: 0 auto;
+			color: $white;
+			text-align: center;
+		}
+
+		.first-line {
+			@include Futura-Light;
+			font-size: 20px;
+		}
+		
+		.second-line {
+			@include Futura-Heavy;
+			font-size: 30px;
+		}
+	}
+
+	.no-touch &:hover {
+		.overlay {
+			@include opacity(1);
+		}
+	}
+	
+	@include media-query-tablet {
+		width: 180px;
+		height: 180px;
+	}
+	
+	@include media-query-mobile {
+		width: 220px;
+		height: 220px;
+	}
+}
+
+.btn-circle {
+	@include Futura-Light;
+	@include border-radius(50%);
+	display: block;
+	position: relative;
+	max-width: 260px;
+	max-height: 260px;
+	margin: 0 auto;
+	border: 1px solid $grey-light;
+	overflow: hidden;
+	z-index: 10;
+
+	&:before {
+		@include transition(border-width $default-transition-duration $default-transition-function);
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include border-radius(50%);
+		border: 15px solid rgba($white, 0.75);
+	}
+
+	img {
+		@include border-radius(50%);
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.overlay {
+		@include transition(transform $default-transition-duration $default-transition-function);
+		@include transform(scale(0));
+		width: 100%;
+		height: 100%;
+		@include border-radius(50%);
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		background: rgba(#000, 0.5);
+		padding: 0 5px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: $white;
+			
+		&:before {
+			content: '';
+			@include inline-block;
+			height: 100%;
+			margin-right: -0.25em;
+		}
+		
+		.content {
+			@include inline-block;
+			padding: 0 5px;
+		}
+	}
+
+	.no-touch &:hover {
+		&:before { border-width: 0; }
+		.overlay { @include transform(scale(1)); }
+	}
+}
+
+.no-transition {
+	@include transition(none !important);
+}
+
+.filter-bar {
+	background: $grey-lightest;
+	padding: 10px 0;
+	border-bottom: 1px solid $grey-light;
+	text-align: center;
+
+	.btn {
+		margin: 10px;
+		max-width: 245px;
+		min-width: 180px;
+	}
+}
+
+#fixed-buttons {
+	@include transition-property(right);
+	@include transition-duration($default-transition-duration);
+	@include transition-timing-function($default-transition-function);
+	position: fixed;
+	top: 60%;
+	right: 0;
+	z-index: 10002;
+	
+	#fixed-donate {
+		@include Futura-Heavy;
+		@include border-radius(5px 0 0 5px);
+		@include transition-property(background);
+		@include transition-duration($default-transition-duration);
+		@include transition-timing-function($default-transition-function);
+		padding: 12px 25px 12px 20px;
+		background: rgba(#000,.6);
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 16px;
+		font-weight: 700;
+		display: block;
+		margin-bottom: 8px;
+
+		&:hover {
+			background: rgba(#000,.7);
+		}
+
+		span {
+			margin-right: 20px;
+			color: #E93C54;
+			top: 2px;
+			position: relative;
+		}
+	}
+
+	.open & {
+		right: -200px;
+	}
+
+	@include media-query-mobile {
+		display: none;
+	}
+}
+
+/* IE8 Modal Window Styles
+*********************************/
+
+#hidden_link {
+	display: none;
+}
+
+#modal {
+
+	.modal-header {
+		padding: 50px 10% 45px 10%;
+		background: $white;
+
+		.header {
+			color: $green;
+			text-align: center;
+
+			.subheader {
+				color: $default-text-color;
+			}
+		}
+	}
+
+	.modal-body {
+		background: $grey-lightest;
+		border-top: 1px solid $grey-light;
+		padding: 25px 15% 90px 15%;
+
+		#instructables {
+			@include Futura-Light;
+			max-width: 500px;
+			margin: 0 auto;
+			width: 100%;
+
+			.icon-container {
+				margin-bottom: 30px;
+
+				.browser-icon {
+					@include inline-block;
+					margin: 0 12px 10px 12px;
+				}
+			}
+
+			.green-text {
+				@include Futura-Heavy;
+				text-transform: uppercase;
+				font-size: 16px;
+				color: $green;
+				text-align: center;
+
+				&.continue-link {	
+					@include inline-block;
+					@include transition(color $default-transition-duration $default-transition-function);
+
+					&:hover,
+					&:active,
+					&:focus {
+						color: $green-dark;
+					}
+				}
+			}
+
+			.center-link {
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.modal-wrap .fancybox-inner {
+	height: auto !important;
+}

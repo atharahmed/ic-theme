@@ -1,0 +1,376 @@
+@import "partials/base";
+@import "partials/core";
+@import "partials/programs-slider";
+@import "partials/section-email-share";
+@import "partials/section-video";
+
+p {
+	@include Futura-Light;
+	font-size: 20px;
+}
+
+#section-header {
+    padding: 255px 0 250px;
+    text-align: center;
+
+	.bg-image {
+		background-image: url(../images/kony-2012/kony-2012-bg.jpg);
+	}
+    
+    .header {
+    	margin-bottom: 40px;
+
+        .ic-icon-libertytriangle:before {
+        	color: $white;
+        	font-size: 80px;
+        	vertical-align: middle;
+        	position: relative;
+        	margin-right: -5px;
+        }
+
+        .subheader {
+        	text-transform: uppercase;
+        	letter-spacing: 10px;
+        }
+    }
+
+    @include media-query-mobile {
+    	.header .ic-icon-libertytriangle:before {
+    		font-size: 45px;
+    	}
+    }
+
+    @include media-query-mobile-small {
+    	.header {
+    		font-size: 39px
+    	}
+
+    	.header .ic-icon-libertytriangle:before {
+    		font-size: 34px !important;
+    	}
+    }
+}
+
+#section-kony-2012 {
+	text-align: left;
+
+	#donkey-dove {
+		@include box-sizing(border-box);
+		@include border-radius(50%);
+		padding: 30px 20px;
+		background: $white;
+		position: absolute;
+		margin-top: -75px;
+		left: 50%;
+		margin-left: -95px;
+		width: 185px;
+		height: 185px;
+
+		img {
+			width: 140px;
+		}
+	}
+
+	.header {
+		text-align: center;
+	}
+
+	.explanation {
+		background: $white;
+		padding: 125px 0 100px;
+
+		p {
+			color: $default-text-color;
+			font-size: 26px;
+		}
+	}
+
+	@include media-query-mobile {
+		text-align: center;
+	}
+}
+
+.watch-video:before {
+	@include arrow($white);
+}
+
+.explanation,
+.kony-goals {
+	.header {
+		color: $default-text-color;
+		text-align: center;
+
+		.intro {
+			color: $red;
+		}
+
+		&.separator .subheader:before {
+			border-bottom: 1px solid $grey;
+		}
+	}
+}
+
+#section-goals {
+	.kony-goals {
+		padding: 100px 0 105px;
+		background: $white;
+
+		.header.medium {
+			margin-bottom: 90px;
+		}
+
+		.header-wrap {
+			padding-left: 180px;
+			font-size: 0;
+			display: table;
+			position: relative;
+			height: 180px;
+
+			.header {
+				text-align: left;
+			}
+			
+			.icon {
+				width: 180px;
+				position: absolute;
+				left: 0;
+				
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+			
+			.text {
+				width: 100%;
+				padding-left: 20px;
+				text-align: left;
+				display: table-cell;
+				vertical-align: middle;
+				
+				.header {
+					text-transform: none;
+					color: $default-text-color;
+					margin: 0;
+					font-weight: 300;
+					text-transform: none;
+					
+					.bold-red {
+						margin-top: 0;
+						color: $red-dark;
+						font-weight: 700;
+						display: block;
+					}
+				}
+			}
+			
+			&.kony-captured {
+				.icon {
+					top: 8px;
+				}
+			}
+			
+			&.global-support {
+				.icon {
+					top: -5px;
+				}
+			}
+		}
+		
+		.body-wrap {
+			margin-bottom: 80px;
+		}
+	}
+
+	.our-results {
+		background-size: cover !important;
+		background: image-url('kony-2012/kony-2012-results.jpg');
+		padding: 110px 0 200px;
+
+		.header {
+			text-align: center;
+
+			.intro {
+				color: $red;
+			}
+		}
+
+		p {
+			color: $white;
+			font-size: 26px;
+		}
+	}
+
+	@include media-query-mobile {
+		
+		.kony-goals {
+			.header-wrap {
+				padding-left: 0;
+				text-align: center;
+				display: block;
+				height: auto;
+				
+				.icon {
+					position: relative;
+					display: block;
+					margin: 0 auto;
+				}
+				
+				.text {
+					display: block;
+					padding: 0;
+					
+					.header {
+						margin-top: 20px;
+						text-align: center;
+					}
+				}
+			}
+			
+			.body-wrap {
+				text-align: center;
+			}
+		}
+		
+		.our-results {
+			text-align: center;
+		}
+	}
+}
+
+#section-financials {
+	padding: 75px 0;
+	background-color: $red;
+
+	.header {
+		margin-top: 25px;
+		text-align: center;
+
+		.intro {
+			color: $default-text-color;
+		}
+	}
+
+	p {
+		color: $white;
+	}
+
+	.btn {
+		margin: 70px auto 30px auto;
+		width: 215px;
+		display: block;
+	}
+
+	#financial-chart {
+		width: 500px;
+		margin: 0 auto;
+
+		#financial-pie-chart {
+			height: 580px;
+		}
+
+		#mobile-text {
+			text-align: center;
+			margin-bottom: 10px;
+			padding-top: 30px;
+			display: none;
+		}
+
+		.total {
+			@include Futura-Heavy;
+			font-size: 32px;
+			fill: $grey-darker;
+			color: $grey-darker;
+			margin: 0;
+			text-align: center;
+		}
+
+		.units {
+			@include Futura-Light;
+			fill: $grey-darkest;
+			text-transform: uppercase;
+			font-size: 16px;
+		}
+
+		.label {
+			@include Futura-Medium;
+			fill: $white;
+			text-transform: uppercase;
+			font-size: 16px;
+		}
+
+		.value {
+			@include Futura-Medium;
+			font-size: 14px;
+			fill: $white;
+		}
+	}
+
+	@include media-query-mobile {
+		text-align: center; 
+		
+		#financial-chart {
+			width: 440px;
+
+			#financial-pie-chart {
+				height: 550px;
+			}
+
+			#mobile-text {
+				display: block !important;
+			}
+		}
+	}
+
+	@include media-query-mobile-small {
+		#financial-chart {
+			width: 270px;
+
+			#financial-pie-chart {
+				height: 490px;
+			}
+		}
+	}
+}
+
+#section-programs {
+	text-align: center;
+	background: $white;
+	padding-top: 80px;
+	
+	.header {
+		color: $default-text-color;
+		margin-bottom: 80px;
+
+		.intro {
+			color: $red;
+		}
+
+		&.separator .subheader:before {
+			border-bottom: 1px solid $grey;
+		}
+	}
+
+	.icon {
+		@include inline-block;
+	}
+}
+
+#section-donate-ask {
+	background: $white;
+	padding: 110px 0 130px;
+	text-align: center;
+
+	.header {
+		color: $default-text-color;
+		margin-bottom: 40px;
+
+		.intro {
+			color: $green;
+		}
+
+		&.separator .subheader:before {
+			border-bottom: 1px solid $grey;
+		}
+	}
+}

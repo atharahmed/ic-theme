@@ -1,0 +1,37 @@
+@import "partials/base";
+
+.team-bios {
+
+	> div {
+		margin-bottom: 30px;
+
+		.team-member-photo {
+			margin: 0 auto;
+		}
+
+		.content {
+			text-align: center;
+			margin-top: 15px;
+			
+			span {
+				display: block;
+				line-height: 1.2;
+			}
+
+			.team-member-name {
+				@include Futura-Medium;
+				color: $green;
+				font-size: 22px;
+			}
+
+			.team-member-title {
+				@include Futura-Light;
+				font-size: 18px;
+			}
+		}
+
+		.circle-graphic {
+			border: 1px solid $grey-light;
+		}
+	}
+}

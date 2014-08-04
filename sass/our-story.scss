@@ -1,0 +1,341 @@
+@import "partials/base";
+@import "partials/core";
+@import "partials/programs-slider";
+@import "partials/section-our-team";
+@import "partials/section-email-share";
+@import "partials/bxslider-slideshow";
+@import "partials/section-video";
+
+#section-header {
+	padding: 170px 0 35px;
+	text-align: center;
+
+	.bg-image {
+		background-image: url(../images/our-story/our-story-bg.jpg);
+	}
+
+	#values-circle {
+		@include border-radius(50%);
+		@include box-sizing(border-box);
+		margin: 0 auto;
+		width: 440px;
+		height: 440px;
+		border: 4px solid $white;
+		padding: 80px;
+		margin-bottom: 95px;
+
+		.header {
+			@include Futura-Book;
+			color: $white;
+			font-size: 28px;
+			text-transform: uppercase;
+			margin-top: 42px;
+
+			span {
+				display: block;
+			}
+
+			#green-value {
+				color: $green;
+			}
+
+			#big-value {
+				font-size: 86px;
+				font-weight: 500;
+				line-height: .9;
+			}
+
+			.ethos:after {
+				content: '';
+				@include inline-block;
+				border-bottom: 1px solid $grey-lightest;
+				width: 20%;
+				height: 1px;
+				margin-top: -10px;
+			}
+		}
+	}
+
+	@include media-query-mobile {
+		#values-circle {
+			width: 280px;
+			height: 280px;
+			padding: 45px;
+
+			.header {
+				font-size: 20px;
+				margin-top: 22px;
+
+				#big-value {
+					font-size: 60px;
+				}
+			}
+		}
+	}
+}
+
+#section-story {
+	text-align: left;
+
+	.header {
+		text-align: center;
+
+		.intro {
+
+			&.dark {
+				color: $default-text-color;
+			}
+
+			&.green {
+				color: $green;
+			}
+		}
+	}
+
+	p {
+		@include Futura-Light;
+		font-size: 26px;
+		color: $white;
+	}
+
+	.btn {
+		display: block;
+		width: 215px;
+		margin: 65px auto 25px auto;
+	}
+
+	.intro-section,
+	.tertiary-section {
+		color: $white;
+		padding: 120px 0;
+		background: $green;
+	}
+
+	.secondary-section {
+		@include background-size(cover);
+		background-image: image-url('our-story/the-beginning-img.jpg');
+		background-position: top center;
+		padding: 170px 0 175px;
+	}
+
+	@include media-query-mobile {
+		text-align: center !important;
+	}
+}
+
+.watch-video {
+	&:before {
+		@include arrow($green);
+	}
+
+	@include media-query-mobile {
+		.header {
+			font-size: 30px;
+
+			.intro {
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+#section-numbers {
+	text-align: center;
+	padding: 100px 0;
+	background: $grey-lightest;
+	border-bottom: 1px solid $grey-light;
+	text-align: left;
+	
+	.header {
+		text-align: center;
+		color: $default-text-color;
+		margin-bottom: 80px;
+
+		.intro { color: $green; }
+
+		&.separator .subheader:before {
+			border-bottom: 1px solid $grey;
+		}
+	}
+
+	.header-wrap {
+		padding-left: 161px;
+		font-size: 0;
+		display: table;
+		position: relative;
+		min-height: 161px;
+		height: 161px;
+		
+		.icon {
+			width: 161px;
+			position: absolute;
+			left: 0;
+			
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		
+		.text {
+			width: 100%;
+			padding-left: 20px;
+			text-align: left;
+			display: table-cell;
+			vertical-align: middle;
+			
+			.header {
+				color: $default-text-color;
+				margin: 0;
+				text-align: left;
+				
+				.number {
+					color: $green;
+				}
+				
+				.subheader {
+					margin-top: 0;
+				}
+			}
+		}
+		
+		&.bill {
+			.icon {
+				top: -18px;
+			}
+		}
+		
+		&.lobby {
+			.icon {
+				top: -40px;
+			}
+		}
+		
+		&.activist {
+			.icon {
+				top: -29px;
+			}
+		}
+		
+		&.partner {
+			.icon {
+				top: -18px;
+			}
+		}
+	}
+	
+	.body-wrap {
+		margin-bottom: 80px;
+		
+		p {
+			@include Futura-Light;
+		}
+	}
+
+	@include media-query-mobile {
+		.header-wrap {
+			padding-left: 0;
+			text-align: center;
+			display: block;
+			height: auto;
+			
+			.icon {
+				position: relative;
+				display: block;
+				margin: 0 auto;
+			}
+			
+			.text {
+				display: block;
+				padding: 0;
+				text-align: center;
+
+				.header {
+					text-align: center;
+				}
+			}
+		}
+		
+		.body-wrap {
+			text-align: center;
+		}
+	}
+}
+
+#section-kony-2012 {
+	background: image-url('our-story/kony-2012-bg.jpg') no-repeat center center;
+	@include background-size(cover);
+	padding: 115px 0 145px;
+	text-align: center;
+
+	.header.hero {
+		margin-bottom: 80px; 
+
+        .ic-icon-libertytriangle:before {
+        	color: $white;
+        	font-size: 80px;
+        	vertical-align: middle;
+        	position: relative;
+        	margin-right: -5px;
+        }
+    }
+
+    p {
+    	@include Futura-Light;
+    	color: $white;
+    	font-size: 26px;
+    	margin-bottom: 70px;
+    }
+
+    @include media-query-mobile {
+    	.header .ic-icon-libertytriangle:before {
+    		font-size: 45px;
+    	}
+    }
+
+    @include media-query-mobile-small {
+    	.header {
+    		font-size: 39px
+    	}
+
+    	.header .ic-icon-libertytriangle:before {
+    		font-size: 34px !important;
+    	}
+    }
+}
+
+#section-programs {
+	text-align: center;
+	background: $white;
+	padding-top: 80px;
+	
+	.header {
+		color: $default-text-color;
+		margin-bottom: 80px;
+		
+		.intro {
+			color: $green;
+		}
+
+		.subheader {
+			color: $default-text-color;
+		}
+
+		&.separator .subheader:before {
+			border-bottom: 1px solid $grey;
+		}
+	}
+}
+
+#section-our-team {
+	background: $white;
+	padding-top: 90px;
+
+	.header {
+		color: $default-text-color;
+
+		.intro {
+			color: $green;
+		}
+	}
+}

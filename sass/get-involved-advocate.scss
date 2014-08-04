@@ -1,0 +1,228 @@
+@import "partials/base";
+@import "partials/core";
+@import "partials/bxslider-slideshow";
+@import "partials/section-email-share";
+
+
+#section-header {
+	text-align: center;
+	padding: 240px 0 180px;
+	
+	.bg-image {
+		background-image: url(../images/get-involved/header-bg.jpg);
+	}
+	
+	.header {
+		.subheader {
+			padding: 0 15%;
+		}
+	}
+	
+	@include media-query-tablet {
+		.header {
+			.subheader {
+				padding: 0;
+			}
+		}
+	}
+}
+
+#section-intro {
+	text-align: center;
+	background: $white;
+	color: $default-text-color;
+	padding: 80px 0 100px;
+
+	.header {
+		color: $default-text-color;
+		padding-bottom: 50px;
+		position: relative;
+
+		.intro {
+			color: $green;
+		}
+		
+		.subheader {
+			&:before {
+				border-bottom-color: $grey-lightest; 
+			}
+		}
+	}
+	
+	p {
+		@include Futura-Light;
+		font-size: 24px;
+	}
+	
+	.btn {
+		margin: 50px 0 20px;
+	}
+	
+	.watch-video {
+		@include transition(color $default-transition-duration $default-transition-function);
+		@include Futura-Heavy;
+		text-transform: uppercase;
+		font-size: 16px;
+		color: $green;
+		
+		&:hover,
+		&:active,
+		&:focus {
+			color: $green-dark;
+		}
+	}
+}
+
+#section-numbers {
+	text-align: center;
+	
+	.header {
+		.intro { color: $green; }
+	}
+	
+	.top {
+		padding-top: 100px;
+		background: $grey-darkest;
+		
+		img {
+			position: relative;
+			display: block;
+			width: 100%;
+			bottom: -1px;
+		}
+	}
+	
+	.bottom {
+		padding: 80px 0 100px;
+		background: $grey-lightest;
+		border-bottom: 1px solid $grey-light;
+		text-align: left;
+		
+		.header-wrap {
+			padding-left: 161px;
+			font-size: 0;
+			display: table;
+			position: relative;
+			min-height: 161px;
+			height: 161px;
+			
+			.icon {
+				width: 161px;
+				position: absolute;
+				left: 0;
+				
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+			
+			.text {
+				width: 100%;
+				padding-left: 20px;
+				text-align: left;
+				display: table-cell;
+				vertical-align: middle;
+				
+				.header {
+					color: $default-text-color;
+					margin: 0;
+					
+					.number {
+						color: $green;
+					}
+					
+					.subheader {
+						margin-top: 0;
+					}
+				}
+			}
+			
+			&.bill {
+				.icon {
+					top: -18px;
+				}
+			}
+			
+			&.lobby {
+				.icon {
+					top: -40px;
+				}
+			}
+			
+			&.activist {
+				.icon {
+					top: -29px;
+				}
+			}
+			
+			&.partner {
+				.icon {
+					top: -18px;
+				}
+			}
+		}
+		
+		.body-wrap {
+			margin-bottom: 80px;
+			
+			p {
+				@include Futura-Light;
+			}
+		}
+	}
+	
+	@include media-query-mobile {
+		.bottom {
+			.header-wrap {
+				padding-left: 0;
+				text-align: center;
+				display: block;
+				height: auto;
+				
+				.icon {
+					position: relative;
+					display: block;
+					margin: 0 auto;
+				}
+				
+				.text {
+					display: block;
+					padding: 0;
+					text-align: center;
+				}
+			}
+			
+			.body-wrap {
+				text-align: center;
+			}
+		}
+	}
+}
+
+#section-sign-up {
+	background: $white;
+	text-align: center;
+	padding: 80px 0 100px;
+	
+	.header {
+		color: $default-text-color;
+		margin-bottom: 40px;
+		
+		.intro {
+			color: $green;
+		}
+		
+		.subheader {
+			&:before {
+				border-bottom-color: $grey-light;
+			}
+		}
+	}
+	
+	form {
+		button[type="submit"] {
+			margin-top: 20px;
+		}
+	}
+}

@@ -1,0 +1,188 @@
+@import "partials/base";
+@import "partials/core";
+@import "partials/section-our-team";
+@import "partials/email-form";
+@import "partials/contact-us-photos";
+@import "partials/section-email-share";
+
+#section-header {
+	text-align: center;
+
+	.bg-image {
+		background-image: image-url('contact-us/contact-bg.jpg');
+	}
+}
+
+#section-call {
+	text-align: center;
+	background: $white;
+	padding: 80px 0 100px;
+	
+	.header {
+		color: $default-text-color;
+		
+		.intro { color: $green; }
+
+		.subheader:before {
+			border-color: $grey;
+		}
+	}
+
+	#phone-number {
+		@include Futura-Light;
+		font-size: 26px;
+		margin-bottom: 0;
+
+		#call {
+			@include Futura-Heavy;
+			color: $green;
+			text-transform: uppercase;
+		}
+
+		small {
+			font-size: 70%;
+		}
+	}
+
+	.team-bios {
+		margin-top: 70px;
+	}
+	
+	@include media-query-mobile {
+		#phone-number {
+			#call {
+				display: block;
+			}
+		}
+	}
+}
+
+#section-email {
+	background: $grey-lightest;
+	border-top: 1px solid $grey-light;
+	padding: 100px 0 70px;
+		
+	.header {
+		color: $default-text-color;
+		text-align: center;
+	}
+
+	#email-submit-form {
+		max-width: 630px;
+		margin: 0 auto;
+		margin-top: 50px;
+		text-align: center;
+
+		.select-group {
+			.glyphicon {
+				display: none;
+			}
+		}
+
+		.select2-choice {
+			text-align: left;
+			color: $white !important;
+		}
+
+		small {
+			@include Futura-Medium;
+			position: absolute;
+			color: $red-dark;
+			margin-left: 5px;
+			text-align: left;
+			line-height: 1;
+			font-size: 15px;
+		}
+
+		.input {
+			margin-bottom: 30px;
+
+			.glyphicon {
+				top: 11px !important;
+				right: 15px;
+			}
+
+			input {
+				height: 56px;
+			}
+
+			textarea {
+				height: 150px;
+			}
+		}
+	}
+}
+
+#section-visit {
+	background: image-url('contact-us/invisiblechildrenoffice.jpg') no-repeat center left;
+	@include background-size(cover);
+	text-align: center;
+	position: relative;
+
+	#dark-overlay {
+		background: rgba(0, 0, 0, 0.3);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	#visit {
+		padding-top: 190px;
+		padding-bottom: 255px;
+
+		.header {
+			@include text-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+			text-rendering: optimizelegibility;
+
+			.intro {
+				color: $green;
+			}
+		}
+
+		.btn {
+			margin-top: 20px;
+		}
+
+		#social-buttons {
+			&:before {
+				content: '';
+				display: block;
+				width: 150px;
+				margin: 0 auto;
+				border-bottom: 1px solid white;
+				margin-top: 35px;
+				margin-bottom: 10px;
+			}
+
+			.btn-social {
+				margin-left: 6px;
+				margin-right: 6px;
+			}
+		}
+
+		#office-info {
+			@include Futura-Light;
+			color: $green;
+			font-size: 22px;
+
+			.title {
+				color: $white;
+				font-weight: 400;
+				text-transform: uppercase;
+			}
+		}
+	}
+	
+	@include media-query-mobile {
+		#visit {
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+	}
+}
+
+.fancybox-overlay {
+	z-index: 30000;
+}

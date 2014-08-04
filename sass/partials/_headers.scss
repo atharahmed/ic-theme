@@ -1,0 +1,264 @@
+.header {
+	@include Futura-Heavy;
+	line-height: 1;
+	color: $white;
+	text-transform: uppercase;
+	
+	.intro {
+		display: block;
+	}
+
+	.subheader {
+		display: block;
+		@include Futura-Light;
+		margin: 0;
+		line-height: 1.2;
+		text-transform: none;
+	}
+
+	&.separator {
+		.subheader {
+			&:before {
+				content: '';
+				display: block;
+				width: 150px;
+				margin: 0 auto;
+				border-bottom: 1px solid $white;
+			}
+		}
+	}
+
+	/* Sizes
+	*******************************************/
+
+	&.hero {
+		@include single-text-shadow;
+		font-size: 130px;
+
+		.subheader {
+			font-size: 32px;
+			margin-top: 0px;
+			line-height: 1.2;
+		}
+
+		&.secondary {
+			padding: 225px 0 35px;
+			font-size: 60px;
+
+			.subheader {
+				font-size: 26px;
+				margin-top: 10px;
+			}
+		}
+	}
+
+	&.largest {
+		font-size: 130px;
+
+		.subheader {
+			font-size: 48px;
+		}
+		
+		&.separator {
+			.subheader {
+				margin-top: 10px;
+
+				&:before {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+
+	&.large {
+		font-size: 80px;
+
+		.subheader {
+			font-size: 36px;
+			margin-top: 15px;
+		}
+
+		&.separator {
+			.subheader {
+				margin-top: 30px;
+
+				&:before {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+
+	&.medium {
+		font-size: 60px;
+		
+		.intro {
+			font-size: 23px;
+		}
+
+		.subheader {
+			font-size: 26px;
+			margin-top: 20px;
+		}
+
+		&.separator {
+			.subheader {
+				margin-top: 40px;
+
+				&:before {
+					margin-bottom: 40px;
+				}
+			}
+		}
+	}
+
+	&.small {
+		font-size: 36px;
+
+		.intro {
+			font-size: 20px;
+		}
+
+		.subheader {
+			font-size: 24px;
+			margin-top: 20px;
+		}
+
+		&.separator {
+			.subheader {
+				&:before {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+
+	&.smallest {
+		font-size: 26px;
+
+		.subheader {
+			font-size: 20px;
+			margin-top: 10px;
+		}
+
+		&.separator {
+			.subheader {
+				&:before {
+					margin-bottom: 20px;
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+
+	/* Tablet
+	*******************************************/
+	@include media-query-tablet {
+		&.separator {
+			.subheader {
+				&:before {
+					width: 100px;
+				}
+			}
+		}
+
+		&.hero {
+			font-size: 43px;
+
+			.subheader {
+				font-size: 22px;
+				margin-top: 20px;
+			}
+		}
+
+		&.largest {
+			font-size: 43px;
+
+			.subheader {
+				font-size: 22px;
+				margin-top: 20px;
+			}
+		}
+
+		&.large {
+			font-size: 43px;
+
+			.subheader {
+				font-size: 22px;
+				margin-top: 20px;
+			}
+		}
+
+		&.medium {
+			font-size: 43px;
+
+			.subheader {
+				font-size: 22px;
+				margin-top: 20px;
+			}
+		}
+
+		&.small {
+			font-size: 26px;
+
+			.subheader {
+				font-size: 18px;
+			}
+		}
+
+	}
+
+	/* Mobile
+	*******************************************/
+	@include media-query-mobile {
+		&.separator {
+			.subheader {
+				&:before {
+					width: 50px;
+				}
+			}
+		}
+
+		&.hero {
+			font-size: 36px;
+
+			.subheader {
+				font-size: 24px;
+			}
+			
+			&.secondary {
+				font-size: 36px;
+
+				.subheader {
+					font-size: 24px;
+				}
+			}
+		}
+
+		&.largest {
+			font-size: 36px;
+
+			.subheader {
+				font-size: 33px;
+			}
+		}
+
+		&.medium {
+			font-size: 36px;
+
+			.subheader {
+				font-size: 26px;
+			}
+		}
+		
+		&.small,
+		&.smallest {
+			font-size: 26px;
+
+			.subheader {
+				font-size: 20px;
+				margin-top: 10px;
+			}
+		}
+	}
+}

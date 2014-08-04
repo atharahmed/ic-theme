@@ -1,0 +1,74 @@
+@import "compass/css3";
+@import "partials/mixins";
+@import "partials/fonts";
+
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+/* Colors
+*******************************************/
+
+// green
+$green: #07cca4;
+$green-dark: #06a081;
+$green-light: #5bedcf;
+
+// red
+$red: #cb4133;
+$red-dark: #b80e0e;
+$red-light: #ed5b5b;
+
+// blue
+$blue: #00bff3;
+$blue-dark: #068fb4;
+$blue-light: #85e1fa;
+
+// grey
+$grey: #a1a1a1;
+$grey-dark: #555555;
+$grey-darker: #454545;
+$grey-darkest: #353535;
+$grey-light: #d7d7d7;
+$grey-lightest: #f4f4f4;
+
+// yellow
+$yellow: #f7dc29;
+$yellow-dark: #f3d300;
+
+// others
+$white: #FFF;
+$default-text-color: #686868;
+$crisis-tracker-red: #CB4133;
+
+/* Old colors
+*******************************************/
+
+$light-green: #07cca4;
+$dark-grey: #3a3a3a;
+
+$light-grey: #848484;
+$lighter-grey: #b2b2b2;
+$light-blue: #acd7d3;
+$red-orange: #f7493c;
+$dark-red-orange: #64302d;
+$greyish-pink: #be9ea5;
+$bright-pink: #ff5d89;
+$green-get-involved: #a9d9a5;
+
+$grey-button-border: #cecfbd;
+$grey-input-background: #ebebeb;
+$grey-footer-bg: #373433;
+$grey-box-border: #dbdbdb;
+
+$about-border-blue: #bac7d6;
+
+/* Text shadow
+*******************************************/
+$default-text-shadow-color: rgba(0, 0, 0, 0.5);
+$default-text-shadow-h-offset: 0px;
+$default-text-shadow-v-offset: 0px;
+$default-text-shadow-blur: 10px;
+
+/* Transition
+*******************************************/
+$default-transition-duration: 0.3s;
+$default-transition-function: ease;

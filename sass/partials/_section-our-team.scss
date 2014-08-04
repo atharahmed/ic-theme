@@ -1,0 +1,160 @@
+$scaleMax: 1.15;
+@include keyframes(scale-bounce-in) {
+	0% {
+		@include scale(0);
+	}
+	60% {
+	  	@include scale($scaleMax);
+	}
+	100% {
+	   @include scale(1);
+	}
+}
+
+@include keyframes(scale-bounce-out) {
+	0% {
+		@include scale(1);
+	}
+	60% {
+		@include scale($scaleMax);
+	}
+	100% {
+		@include scale(0);
+	}
+}
+
+#section-our-team {
+	padding: 0 0 100px;
+	text-align: center;
+
+	.header {
+		margin-bottom: 60px;
+		.intro { color: $green; }
+	}
+
+	.col-staff {
+		position: relative;
+	}
+
+	.image-wrap {
+		width: 20%;
+		float: left;
+		overflow: hidden;
+		margin-left: 6.6666666%;
+		@include border-radius(50%);
+		@include scale(0);
+		border: 1px solid $grey-lightest;
+
+		img {
+			@include border-radius(50%);
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		&.first {
+			margin-left: 0;
+		}
+
+		&.inactive {
+			display: none;
+		}
+
+		&.active {
+			display: block;
+		}
+
+		&.scale-up {
+			@include animation(scale-bounce-in .4s ease-out forwards);
+		}
+
+		&.scale-down {
+			@include animation(scale-bounce-out .3s ease-in forwards);
+		}
+	}
+
+	.btn {
+		margin-top: 60px;
+	}
+}
+
+.team-member-photo {
+	@include border-radius(130px);
+	@include box-shadow(rgba(#000, .5) 0 0 5px);
+	border: 6px solid $white;
+	width: 260px;
+	height: 260px;
+	overflow: hidden;
+	position: relative;
+
+	img {
+		width: auto;
+		height: 100%;
+	}
+	
+	.overlay {
+		@include transition(opacity 0.3s ease);
+		@include border-radius(130px);
+		@include opacity(0);
+		background: rgba(#000, .5);
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: table;
+		
+		.content {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		
+		.team-member-name,
+		.team-member-title {
+			display: block;
+			width: 80%;
+			margin: 0 auto;
+			color: $white;
+			text-align: center;
+		}
+		
+		.team-member-name {
+			@include Futura-Heavy;
+			font-size: 24px;
+		}
+		
+		.team-member-title {
+			@include Futura-Book;
+			font-size: 16px;
+		}
+	}
+
+	&:after {
+		@include border-radius(130px);
+		@include box-shadow(rgba(#000, .4) 0 0 8px inset);
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: block;
+	}
+
+	&.small {
+		@include border-radius(63px);
+		border-width: 3px;
+		width: 126px;
+		height: 126px;
+
+		&:after {
+			@include border-radius(63px);
+		}
+	}
+	
+	&:hover {
+		.overlay {
+			@include opacity(1);
+		}
+	}
+}

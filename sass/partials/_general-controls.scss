@@ -1,0 +1,23 @@
+$progress-border-radius: 7px;
+$stipe-color: rgba($white, .25);
+.progress {
+	@include border-radius($progress-border-radius);
+	height: 14px;
+	
+	.progress-bar {
+		background-color: $green;
+		@include box-shadow(none);
+		@include background-image(
+			linear-gradient(
+				45deg,
+				$stipe-color 25%,
+				transparent 25%,
+				transparent 50%,
+				$stipe-color 50%,
+				$stipe-color 75%,
+				transparent 75%,
+				transparent
+			)
+		);
+	}
+}

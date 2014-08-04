@@ -1,0 +1,262 @@
+@import "partials/base";
+@import "partials/core";
+@import "partials/mixins";
+@import "partials/section-email-share";
+
+#section-header {
+	text-align: center;
+	position: relative;
+
+	.bg-image {
+		background-image: image-url('financials/financials-bkg.jpg');
+	}
+}
+
+#section-glance,
+#section-money-allocation,
+#section-documents {
+	.header {
+		color: $default-text-color;
+	}
+}
+
+#section-glance {
+	text-align: center;
+	background: $white;
+	padding: 140px 0 110px;
+	border-bottom: 1px solid $grey-light;
+
+	.header {
+		font-size: 60px;
+
+		.subheader {
+			font-size: 24px;
+			margin: 20px;
+		}
+	}
+
+	.btn {
+		margin-bottom: 40px;
+	}
+
+	.bar-chart {
+		height: 370px;
+		width: 550px;
+		margin: 0 auto;
+
+		.numbers {
+			fill: $dark-grey;
+			@include Futura-Heavy;
+			font-size: 12px;
+		}
+
+		.axis text {
+			font-size: 13px;
+			@include Futura-Heavy;
+
+			tspan {
+				fill: $grey;
+			}
+		}
+
+		.axis line, .axis path {
+			stroke: $grey-light !important;
+		}
+
+		.axis path,
+		.axis line {
+			fill: none;
+			stroke-width: 2px;
+			shape-rendering: crispEdges;
+		}
+
+		.x.axis .tick line {
+			display: none;
+		}
+
+		.grid {
+			.tick {
+				stroke: lightgrey;
+				opacity: 0.7;
+			}
+
+			path {
+				stroke-width: 0;
+			}
+		}
+		
+		.label {
+			@include Futura-Heavy;
+			font-size: 16px;
+		}
+	}
+	
+	@include media-query-tablet {
+		padding: 100px 0 70px;
+		
+		.bar-chart {
+			padding-top: 30px;
+		}
+	}
+
+	@include media-query-mobile {
+		padding: 60px 0 0px;
+		
+		.header {
+			font-size: 26px;
+
+			.subheader {
+				font-size: 20px;
+				margin: 10px 0 30px;
+			}
+		}
+		
+		.bar-chart {
+			width: 450px;
+
+			.x.label {
+				margin-top: 10px;
+			}
+		}
+	}
+
+	@include media-query-mobile-small {
+		.bar-chart {
+			width: 290px;
+		}
+	}
+}
+
+#section-money-allocation {
+	padding: 80px 0 90px;
+	background: $grey-lightest;
+	text-align: center;
+
+	.header {
+		margin-bottom: 20px;
+	}
+
+	#financial-pie-chart {
+		width: 650px;
+		height: 500px;
+		margin: 0 auto;
+	}
+
+	#mobile-text {
+		text-align: center;
+		margin-bottom: 15px;
+		margin-top: 10px;
+	}
+
+	.total {
+		@include Futura-Heavy;
+		font-size: 30px;
+		fill: $grey-darker;
+		color: $grey-darker;
+		margin: 0;
+	}
+
+	.label, .units {
+		@include Futura-Light;
+		fill: $grey;
+		color: $grey;
+		font-size: 14px;
+	}
+
+	.value {
+		@include Futura-Medium;
+		font-size: 14px;
+		fill: $green;
+	}
+
+	#circ {
+		fill: $grey;
+	}
+
+	.pointer {
+		stroke: $grey;
+	}
+
+	.yearlabel {
+		max-width: 800px;
+		margin: 10px auto 0 auto;
+		float: none;
+
+		.btn {
+			@include inline-block;
+			margin-bottom: 10px;
+			min-width: 0;
+			width: 100%;
+		}
+	}
+
+	@include media-query-mobile {
+		padding: 60px 0 70px;
+
+		#financial-pie-chart {
+			width: 480px;
+			height: 550px;
+		}
+
+		#mobile-text {
+			display: block !important;
+		}
+	}
+
+	@include media-query-mobile-small {
+		#financial-pie-chart {
+			width: 270px;
+			height: 430px;
+		}
+	}
+}
+
+#section-documents {
+	padding: 80px 0;
+	background: $white;
+	text-align: center;
+	color: $default-text-color;
+	position: relative;
+	
+	&:before {
+		@include arrow($grey-lightest);
+	}
+
+	.header {
+		margin-bottom: 60px;
+		color: $default-text-color;
+	}
+
+	.financials {
+		text-align: left;
+
+		a {
+			@include transition(color 0.3s ease);
+			@include Futura-Light;
+			font-size: 20px;
+			display: block;
+			color: $default-text-color;
+			line-height: 1.3;
+
+			&:hover {
+				color: $green;
+			}
+		}
+
+		.header {
+			margin-bottom: 15px;
+		}
+
+		.document-cluster {
+			margin-bottom: 40px;
+		}
+	}
+	
+	@include media-query-mobile {
+		.financials {
+			.document-cluster {
+				text-align: center;
+			}
+		}
+	}
+}

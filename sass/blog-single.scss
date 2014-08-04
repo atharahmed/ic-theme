@@ -1,0 +1,115 @@
+@import "partials/base";
+@import "partials/core";
+@import "partials/email-form";
+@import "partials/social-share";
+@import "partials/bxslider-slideshow";
+@import "partials/related-article";
+
+#section-header {
+	text-align: center;
+	
+	.bg-image {
+		background-position: top center;
+	}
+	
+	.header.hero.secondary {
+		font-size: 48px;
+		margin-top: 200px;
+	}
+}
+
+#section-content {
+	background: $white;
+	padding: 90px 0 80px;
+
+	.post-content {
+		padding-bottom: 40px;
+
+		#text-content {
+
+			p:first-child {
+				@include Futura-Light;
+				font-size: 28px;
+			}
+
+			p:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+		
+		img, .wp-caption {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+	
+
+	h1, h2, h3, h4, h5, h6 {
+		@include Futura-Medium;
+		font-size: 28px;
+	}
+
+	strong {
+		font-weight: 600;
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	div {
+		line-height: 1.4;
+		font-size: 20px;
+	}
+
+	.wp-caption-text {
+		margin-top: 5px;
+		font-size: 16px;
+		color: $grey;
+	}
+
+	@include media-query-mobile {
+		text-align: center;
+	}
+}
+
+#section-next {
+	border-top: 1px solid $grey-light;
+	border-bottom: 1px solid $grey-light;
+
+	.btn-circle {
+		@include Futura-Heavy;
+	}
+
+	@include media-query-mobile {
+		text-align: center;
+	}
+}
+
+
+
+/* Email Sign-Up
+*******************************************/
+#section-email-sign-up {
+	padding: 80px 0;
+	text-align: center;
+	background: $white;
+
+	.header.smallest {
+		color: $green;
+		margin-bottom: 10px;
+	}
+
+	.header.medium {
+		color: $default-text-color;
+
+		.subheader {
+			padding: 0 10%;
+		}
+
+		margin-bottom: 60px;
+	}
+}

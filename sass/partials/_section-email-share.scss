@@ -1,0 +1,52 @@
+@import "partials/email-form";
+
+/* Donate and Social Share section
+********************************************/
+
+.email-and-share {
+	@include Futura-Book;
+	background: $grey-darkest;
+	padding: 40px 0;
+	text-align: center;
+
+	p {
+		font-size: 22px;
+		color: #fff;
+		text-align: center;
+	}
+
+	#first-col {
+		border-right: 1px solid $grey;
+
+		form {
+			input[type="email"] {
+				background-color: $grey-darker;
+				border-color: $grey-darker;
+				box-shadow: none;
+				color: $white;
+			}
+
+			input[type=submit] {
+				background-color: $white; 
+				color: $grey-darker;
+				
+				&:hover {
+					background-color: $green;
+					color: $white;
+				}
+			}
+		}
+		
+		@include media-query-mobile {
+			border-right: none;
+		}
+	}
+
+	.col-donate-share {
+		padding: 0px 0 20px;
+	}
+
+	.btn-social {
+		margin: 0 5px;
+	}
+}

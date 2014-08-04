@@ -1,0 +1,51 @@
+@import "partials/base";
+@import "partials/core";
+
+#section-header {
+	text-align: center;
+
+	.bg-image {
+		background: image-url('privacy-policy/header-privacy-bg.jpg');
+	}
+}
+
+#section-policy {
+	padding: 70px 0 130px;
+	background: $white;
+	border-bottom: 1px solid $grey-light;
+
+	p:first-child {
+		@include Futura-Light;
+		font-size: 28px;
+	}
+
+	.bold-text {
+		font-size: 28px;
+		@include Futura-Medium;
+		margin-bottom: 15px;
+	}
+
+	ul {
+		margin-left: 30px;
+
+		li {
+			line-height: 1.2;
+		}
+	}
+}
+
+#section-contact {
+	padding: 70px 0 110px;
+	background-color: $grey-lightest;
+	color: $default-text-color;
+	text-align: center;
+
+	.header {
+		color: $default-text-color;
+		margin-bottom: 50px;
+
+		.intro {
+			color: $green;
+		}
+	}
+}

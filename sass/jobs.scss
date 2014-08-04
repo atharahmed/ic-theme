@@ -1,0 +1,197 @@
+@import "partials/base";
+@import "partials/core";
+@import "partials/bxslider-slideshow";
+@import "partials/email-form";
+@import "partials/section-our-team";
+@import "partials/section-email-share";
+
+#section-header {
+	text-align: center;
+
+	.bg-image {
+		background-image: url('../images/jobs/header-bg.jpg');
+	}
+}
+
+#section-filter {
+	.btn {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+}
+
+#section-positions {
+	padding: 50px 0 50px;
+	background: $white;
+
+	.loading .spinner {
+		display: block !important;
+	}
+
+	#spin-container .spinner {
+		display: none;
+	}
+
+	#positions {
+		position: relative;
+		height: auto;
+		transition-duration: $default-transition-duration;
+		transition-timing-function: $default-transition-function;
+		transition-property: max-height;
+		margin: 0 auto;
+		max-width: 960px;
+
+		.jobmeta {
+			@include border-radius(5px);
+			@include inline-block;
+			text-align: left;
+			background: $grey-lightest;
+			color: $green;
+			padding: 20px;
+			max-width: 290px;
+			width: 100%;
+			height: 135px;
+			margin: 15px;
+			transition-duration: $default-transition-duration;
+			transition-timing-function: $default-transition-function;
+			transition-property: color, background;
+
+			&:hover {
+				color: $white;
+				background: $green;
+			}
+
+			p {
+				margin: 0;
+			}
+
+			.title {
+				@include Futura-Medium;
+				text-transform: uppercase;
+				line-height: 1.2;
+				margin-bottom: 5px;
+				font-size: 20px;
+			}
+
+			.location {
+				@include Futura-Light;
+				font-size: 18px;
+			}
+		}
+
+		.error-message {
+			@include Futura-Light;
+			width: 100%;
+			position: absolute;
+			text-align: center;
+		}
+	}
+}
+
+#section-gallery {
+	padding: 50px 0 0;
+	background: $grey-lightest;
+	border-top: 1px solid $grey-light;
+
+	.header {
+		color: $default-text-color;
+		margin-bottom: 50px;
+		text-align: center;
+
+		.intro {
+			color: $green;
+			text-transform: uppercase;
+		}
+	}
+
+	#slide-counter {
+		background: $grey-lightest;
+	}
+}
+
+#section-our-team {
+	padding-top: 100px;
+	background: $white;
+	border-top: 1px solid $grey-light;
+	
+	.header {
+		color: $default-text-color;
+	}
+}
+
+#section-values {
+	@include background-size(cover);
+	@include Futura-Light;
+	background-image: image-url('jobs/values-bg.jpg');
+	text-align: center;
+	padding: 95px 0 20px;
+	background-color: #000;
+
+	.intro {
+		color: $green;
+		text-transform: uppercase;
+	}
+
+	li {
+		margin-bottom: 75px;
+
+		.value {
+			text-transform: uppercase;
+			color: $green;
+			margin-bottom: 10px;
+			font-weight: 800;
+		}
+
+		.description {
+			color: $white;
+			margin: 0;
+			font-size: 20px;
+			margin: 0 auto;
+			max-width: 430px;
+		}
+	}
+}
+
+/* Email Sign-Up
+*******************************************/
+
+#section-email-sign-up {
+	padding: 80px 0;
+	text-align: center;
+	
+	.header {
+		color: $default-text-color;
+
+		.intro {
+			color: $green;
+		}
+		
+		.subheader {
+			padding: 0 10%;
+		}
+		
+		margin-bottom: 60px;
+	}
+}
+
+#section-sign-up {
+	background: $grey-lightest;
+	text-align: center;
+	padding: 80px 0 100px;
+	border-top: 1px solid $grey-light;
+	
+	.header {
+		color: $default-text-color;
+		margin-bottom: 40px;
+		
+		.intro {
+			color: $green;
+		}
+		
+		.subheader {
+			&:before {
+				border-bottom-color: $grey-light;
+			}
+		}
+	}
+}

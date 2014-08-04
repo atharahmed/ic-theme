@@ -1,0 +1,76 @@
+#section-next {
+	padding: 60px 0;
+	background: $grey-lightest;
+	color: $default-text-color;
+
+	.btn-circle {
+		@include background-size(cover);
+		background-position: center center;
+		width: 260px;
+		height: 260px;
+
+		.content p {
+			@include Futura-Heavy;
+		}
+	}
+
+	.header {
+		color: $default-text-color;
+		margin-bottom: 20px;
+	}
+
+	p {
+		@include Futura-Light;
+		font-size: 20px;
+	}
+
+	.next-title {
+		@include Futura-Light;
+		color: $default-text-color;
+		font-size: 28px;
+		transition-property: color;
+		transition-timing-function: $default-transition-function;
+		transition-duration: $default-transition-duration;
+
+		&:hover {
+			color: $green;
+		}
+	}
+
+	.timer {
+		@include Futura-Medium;
+		font-style: normal;
+		font-size: 14px;
+		color: $grey-dark;
+		margin-top: 4px;
+		text-transform: uppercase;
+		display: block;
+
+		.clock-icon {
+			@include inline-block;
+			margin-right: 8px;
+			vertical-align: -15%;
+
+			&:before {
+				@include IC-Icons;
+				font-size: 20px;
+				position: relative;
+				content: "\e611";
+			}
+		}
+	}
+
+	@include media-query-tablet {
+		text-align: center;
+
+		.btn-circle {
+			margin-bottom: 20px;
+		}
+	}
+
+	@include media-query-mobile {
+		.btn-circle {
+			margin-bottom: 40px;
+		}
+	}
+}

@@ -1,0 +1,294 @@
+$input-transition-duration: 0.3s;
+$input-transition-ease: ease;
+
+/* Text
+*******************************************/
+
+$input-border-color: $grey-light;
+$input-border-radius: 4px;
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"] {
+	@include transition-property(box-shadow, -webkit-box-shadow, -moz-box-shadow, border-color);
+	@include transition-duration(0.3s);
+	@include transition-timing-function(ease);
+	@include box-shadow(none);
+	@include Futura-Heavy;
+	@include border-radius($input-border-radius);
+	border: 1px solid $input-border-color;
+	outline: none;
+	width: 100%;
+
+	&.form-control {
+		height: 56px;
+		font-size: 16px;
+		padding: 15px 15px 13px;
+		@include placeholder {
+			color: $grey;
+		}
+
+		&.placeholder {
+			color: $grey;
+		}
+
+		&:focus {
+			@include box-shadow(rgba($green, .25) 0 0 10px inset);
+			border-color: $green;
+		}
+		
+		.has-success & {
+			border-color: $green;
+		}
+
+		.has-error & {
+			border-color: $red;
+			&:focus {
+				@include box-shadow(rgba($red, .15) 0 0 10px inset);
+			}
+		}
+	}
+}
+
+.has-success {
+	.form-control-feedback {
+		&.glyphicon-ok {
+			color: $green;
+		}
+	}
+}
+
+textarea {
+	resize: vertical;
+}
+
+/* Select 2
+*******************************************/
+
+.select2.form-control {
+	$arrow-size: 7px;
+	@include Futura-Heavy;
+	font-size: 16px;
+	height: 56px !important;
+	border: none;
+	@include box-shadow(none);
+	padding: 0;
+	
+	.select2-default {
+		color: $white !important;
+	}
+	
+	.select2-choice {
+		@include transition-property(background);
+		@include transition-duration($default-transition-duration);
+		@include transition-timing-function($default-transition-function);
+		@include border-radius($input-border-radius);
+		background: $green;
+		color: $white;
+		padding: 15px 15px 13px;
+		text-transform: uppercase;
+		height: 100%;
+		filter: none;
+		
+		&:hover {
+			background: $green-dark;
+		}
+		
+		.select2-arrow {
+			background: none;
+			background-image: none;
+			border: none;
+			width: 50px;
+			filter: none;
+			
+			b {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -4px;
+				margin-left: -4px;
+				width: 0;
+				height: 0;
+				background: none;
+				border-left: $arrow-size solid transparent;
+				border-right: $arrow-size solid transparent;
+				border-top: $arrow-size solid $white;
+			}
+		}
+	}
+
+	&.select2-dropdown-open {
+		border: none;
+		
+		.select2-choice {
+			@include border-radius($input-border-radius $input-border-radius 0 0);
+			@include box-shadow(none);
+			border: none;
+			background: $green-dark;
+			
+			.select2-arrow b {
+				border-top: none;
+				border-bottom: $arrow-size solid $white;
+			}
+		}
+
+		&.select2-drop-above {
+			.select2-choice {
+				@include border-radius(0 0 $input-border-radius $input-border-radius);
+				@include box-shadow(none);
+				border: none;
+			}
+		}
+	}
+}
+
+.select2-drop {
+	@include Futura-Heavy;
+	font-size: 16px;
+	color: $white;
+	background: none;
+	border: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	margin-right: -1px;
+	
+	.ps-scrollbar-x-rail {
+		z-index: 10000;
+	}
+	
+	.ps-scrollbar-y-rail {
+		z-index: 10001;
+		
+		&:hover,
+		&.in-scrolling {
+			background-color: $green-dark;
+			.ps-scrollbar-y {
+				background-color: $white;
+			}
+		}
+		
+		.ps-scrollbar-y {
+			background-color: $white;
+		}
+	}
+	
+	&.select2-drop-above.select2-drop-active {
+		border-top: none;
+	}
+
+	.select2-search {
+		margin-top: 4px;
+		
+		input[type="text"] {
+			background: $white;
+			color: $default-text-color;
+			margin-top: 0;
+		}
+	}
+	
+	.select2-results {
+		margin: 0;
+		padding: 0;
+		max-height: 200px;
+		overflow: hidden;
+
+		.select2-result {
+			min-height: 50px;
+			padding: 15px 15px 13px;
+			line-height: 1;
+			cursor: pointer;
+			background-color: $green;
+			&:nth-child(even) {
+				//background-color: lighten($green, 2%);
+			}
+			
+			&.select2-highlighted {
+				background: $white;
+				color: $green;
+			}
+			
+			.select2-result-label {
+				padding-left: 0;
+			}
+		}
+	}
+}
+
+/* Checkbox & Radio Button
+*******************************************/
+.checkbox,
+.radio {
+	input[type="checkbox"],
+	input[type="radio"] {
+		display: none;
+
+		&:checked + span {
+			border-color: $green;
+			background: $green;
+		}
+	}
+
+	label {
+		@include Futura-Heavy;
+		text-transform: lowercase;
+		cursor: pointer;
+		position: relative;
+		@include user-select(none);
+
+		span {
+			@include transition(background $input-transition-duration $input-transition-ease);
+			background: $grey-light;
+			@include inline-block;
+			border: 1px solid $grey;
+			width: 20px;
+			height: 20px;
+			margin-right: 5px;
+			text-align: center;
+		}
+
+		&:hover {
+			span {
+				background: $grey;
+			}
+		}
+	}
+}
+
+.checkbox-wrap label span {
+	@include border-radius(2px);
+}
+
+.checkbox {
+	input[type="checkbox"]:checked + span:before {
+		position: relative;
+		@include IC-Icons;
+		font-size: 12px;
+		content: "\e607";
+		top: 1px;
+		color: $white;
+	}
+	
+	label span {
+		@include border-radius(3px);
+	}
+}
+
+.radio {
+	input[type="radio"]:checked + span:before {
+		content: '';
+		display: block;
+		width: 8px;
+		height: 8px;
+		position: absolute;
+		left: 6px;
+		top: 7px;
+		background: $white;
+		@include border-radius(50%);
+	}
+
+	label span {
+		@include border-radius(10px);
+	}
+}

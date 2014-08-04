@@ -1,0 +1,594 @@
+@import "partials/base";
+@import "partials/core";
+@import "partials/bxslider-slideshow";
+@import "partials/section-email-share";
+
+#section-header {
+	text-align: center;
+	padding: 240px 0 180px;
+	
+	.bg-image {
+		background-image: url(../images/get-involved/header-bg.jpg);
+	}
+	
+	.header {
+		.subheader {
+			padding: 0 15%;
+		}
+	}
+	
+	@include media-query-tablet {
+		.header {
+			.subheader {
+				padding: 0;
+			}
+		}
+	}
+}
+
+#section-intro {
+	text-align: center;
+	background: $white;
+	color: $default-text-color;
+	padding: 80px 0 100px;
+
+	.header {
+		color: $default-text-color;
+		padding-bottom: 50px;
+		position: relative;
+
+		.intro {
+			color: $green;
+		}
+		
+		.subheader {
+			&:before {
+				border-bottom-color: $grey-light; 
+			}
+		}
+	}
+	
+	p {
+		@include Futura-Light;
+		font-size: 24px;
+	}
+	
+	.btn {
+		margin: 50px 0 20px;
+	}
+	
+	.watch-video {
+		@include transition(color $default-transition-duration $default-transition-function);
+		@include Futura-Heavy;
+		text-transform: uppercase;
+		font-size: 16px;
+		color: $green;
+		
+		&:hover,
+		&:active,
+		&:focus {
+			color: $green-dark;
+		}
+	}
+}
+
+#section-fundraisers {
+	text-align: center;
+	padding: 120px 0;
+	background: $grey-lightest;
+
+	&:before {
+		@include arrow($white);
+	}
+
+	.header {
+		color: $default-text-color;
+	}
+
+	.images {
+		.photo-mosaic {
+			max-width: 399px;
+			margin: 0 auto;
+
+			.mosaic-row {
+				position: relative;
+
+				.photo,
+				.color-block {
+					width: 33.3333333%;
+					display: block;
+					float: left;
+
+					img {
+						width: 100%;
+						height: auto;
+						display: block;
+					}
+				}
+
+				.color-block img {
+					visibility: hidden;
+				}
+
+				&.top {
+					.photo:first-child {
+						width: 66.66666666%;
+					}
+
+					.photo:nth-child(2),
+					.color-block {
+						right: 0;
+					}
+
+					.color-block {
+						background: $green;
+						right: 0;
+						bottom: -10%;
+					}
+				}
+
+				&.bottom {
+					top: -1px;
+
+					.color-block {
+						background: $grey-lightest;
+					}
+				}
+			}
+		}
+	}
+
+	.text {
+		.header {
+			line-height: 1.3;
+
+			img {
+				position: relative;
+				top: 7px;
+				margin: 0 5px;
+			}
+		}
+
+		p {
+			@include Futura-Light;
+			font-size: 24px;
+			padding: 0 5%;
+		}
+	}
+
+	.cta {
+		.header {
+			text-transform: none;
+			margin: 60px 0 20px;
+		}
+
+		.btn {
+			margin-bottom: 20px;
+		}
+	}
+
+	.donate {
+		@include transition(color $default-transition-duration $default-transition-function);
+		@include Futura-Heavy;
+		text-transform: uppercase;
+		font-size: 16px;
+		color: $green;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $green-dark;
+		}
+	}
+
+	@include media-query-tablet {
+		.text {
+			.header {
+				img {
+					width: 40px;
+					height: auto;
+				}
+			}
+
+			p {
+				font-size: 20px;
+			}
+		}
+	}
+
+	@include media-query-mobile {
+		padding: 80px 0;
+
+		.images {
+			.photo-mosaic {
+				margin-bottom: 60px;
+			}
+		}
+	}
+}
+
+#section-support {
+	text-align: center;
+	padding: 80px 0 120px;
+	background: $grey-darkest;
+	
+	.header {
+		.intro {
+			color: $green;
+		}
+		
+		.subheader {
+			&:before {
+				border-bottom-color: $grey;
+			}
+		}
+	}
+	
+	p {
+		.call-us-label {
+			@include Futura-Heavy;
+			color: $green;
+			text-transform: uppercase;
+		}
+
+		@include Futura-Light;
+		color: $white;
+		font-size: 26px;
+
+		small {
+			font-size: 70%;
+		}
+	}
+
+	.team-bios {
+		margin-top: 70px;
+		> div {
+			margin-bottom: 30px;
+
+			.team-member-photo {
+				margin: 0 auto;
+			}
+
+			.content {
+				text-align: center;
+				margin-top: 25px;
+
+				span {
+					display: block;
+					line-height: 1.2;
+				}
+
+				.team-member-name {
+					@include Futura-Medium;
+					color: $white;
+					font-size: 22px;
+				}
+
+				.team-member-title {
+					@include Futura-Light;
+					font-size: 18px;
+					color: $white;
+				}
+			}
+		}
+	}
+	
+	@include media-query-tablet {
+		p {
+			font-size: 22px;
+		}
+	}
+}
+
+#section-resources {
+	background: $grey-lightest;
+	padding: 80px 0 100px;
+	border-bottom: 1px solid $grey-light;
+	text-align: center;
+
+	&:before {
+		@include arrow($grey-darkest);
+	}
+
+	.header {
+		color: $default-text-color;
+
+		.intro {
+			color: $green;
+		}
+
+		.subheader {
+			&:before {
+				border-bottom-color: $grey;
+			}
+		}
+	}
+	
+	.filters {
+		.btn-filter {
+			margin: 0 15px;
+			width: 215px;
+		}
+		
+		.separator {
+			max-width: 750px;
+			margin: 40px auto;
+			border-bottom: 1px solid $grey-light;
+		}
+	}
+
+	.content {
+		.content-section {
+			display: none;
+
+			&.ideas {
+				display: block;
+				
+				.bxslider {
+					@include Futura-Light;
+					text-align: left;
+					
+					img {
+						width: 100%;
+						max-width: 275px;
+						height: auto;
+					}
+					
+					.slide-counter {
+						margin: 0;
+						color: $green;
+						position: relative;
+					}
+					
+					.header {
+						margin: 0;
+						.subheader {
+							margin: 0;
+						}
+					}
+					
+					.footer {
+						@include Futura-Heavy;
+						a {
+							@include transition(color $default-transition-duration $default-transition-function);
+							color: $green;
+
+							&:hover,
+							&:active,
+							&:focus {
+								color: $green-dark;
+							}
+						}
+					}
+				}
+			}
+
+			&.tips {
+				.tip {
+					@include border-radius(5px);
+					border-style: solid;
+					border-width: 2px;
+					padding: 20px 55px;
+					margin-bottom: 30px;
+					cursor: pointer;
+					position: relative;
+					border-color: $green;
+					@include Futura-Light;
+					font-size: 24px;
+					
+					.question {
+						color: $green;
+					}
+
+					.btn-continue-arrow {
+						@include transition(transform $default-transition-duration $default-transition-function);
+						@include transform-origin(center, 65%);
+						@include opacity(1);
+						top: 0px;
+						position: absolute;
+						right: 30px;
+						color: $green;
+					}
+
+					.toggle-content {
+						padding: 15px 0;
+						display: none;
+
+						&.open {
+							display: block;
+
+							& + .btn-continue-arrow {
+								@include rotate(180deg);
+							}
+						}
+
+						.answer {
+							margin-bottom: 30px;
+							
+							.bold-answer {
+								@include Futura-Heavy;
+							}
+
+							p {
+								margin: .7em 0;
+							}
+
+							.answer {
+								@include Futura-Light;
+								color: $default-text-color;
+								font-size: 18px;
+
+								.bold-answer {
+									font-weight: 600;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&.downloads {
+				.download-item {
+					text-align: left;
+					margin-top: 20px;
+					
+					&:first-child {
+						margin-top: 0;
+					}
+
+					.image {
+						@include inline-block;
+						width: 33.3333333%;
+						
+						.circle-graphic {
+							width: 166px;
+							height: 166px;
+							border: none;
+						}
+					}
+
+					.content {
+						@include inline-block;
+						width: 66.6666666%;
+						padding-right: 40px;
+						position: relative;
+						
+						.item-name {
+							@include Futura-Heavy;
+							margin: 0;
+						}
+						
+						.item-description {
+							@include Futura-Light;
+							margin: 0;
+						}
+						
+						.item-link {
+							@include transition(color $default-transition-duration $default-transition-function);
+							position: absolute;
+							top: 50%;
+							right: 0;
+							font-size: 40px;
+							margin-top: -20px;
+							color: $green;
+							
+							&:hover,
+							&:active,
+							&:focus {
+								color: $green-dark;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	@include media-query-tablet {
+		.filters {
+			.btn-filter {
+				display: block;
+				margin: 10px auto;
+			}
+		
+			.separator {
+				max-width: 100px;
+			}
+		}
+		
+		.content {
+			.content-section {
+				&.ideas {
+					.bxslider {
+						text-align: center;
+						
+						.count {
+							margin-top: 10px;
+						}
+					}
+					
+					.outside-controls {
+						left: 0;
+						
+						.slider-arrow {
+							background: none;
+							border: none;
+							color: $default-text-color;
+							width: auto;
+							height: auto;
+						}
+						
+						#slider-prev {
+							left: 10px;
+						}
+						
+						#slider-next {
+							right: 10px;
+						}
+					}
+				}
+				
+				&.downloads {
+					
+				}
+			}
+		}
+	}
+	
+	@include media-query-mobile {
+		.content {
+			.content-section {
+				&.downloads {
+					.download-item {
+						.image {
+							display: block;
+							width: 100%;
+						}
+						
+						.content {
+							display: block;
+							width: 100%;
+							text-align: center;
+							padding: 0;
+						
+							.item-link {
+								display: block;
+								position: relative;
+								top: 25px;
+								left: 0;
+								margin-bottom: 20px;
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+}
+
+#section-sign-up {
+	background: $white;
+	text-align: center;
+	padding: 80px 0 100px;
+	
+	.header {
+		color: $default-text-color;
+		margin-bottom: 40px;
+		
+		.intro {
+			color: $green;
+		}
+		
+		.subheader {
+			&:before {
+				border-bottom-color: $grey-light;
+			}
+		}
+	}
+	
+	form {
+		button[type="submit"] {
+			margin-top: 20px;
+		}
+	}
+}
